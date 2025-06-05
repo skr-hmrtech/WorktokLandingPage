@@ -116,7 +116,7 @@ export default function ProviderDetail() {
                 </div>
                 
                 {provider.verified && (
-                  <Badge className="bg-iraq-green text-white text-sm">
+                  <Badge className="text-white text-sm">
                     <Award className="w-4 h-4 mr-1" />
                     VERIFIED
                   </Badge>
@@ -165,7 +165,7 @@ export default function ProviderDetail() {
 
               {/* Contact Button */}
               <Button 
-                className="bg-iraq-green hover:bg-green-700 text-white"
+                className="bg-green-500 hover:bg-green-700 text-white"
                 onClick={() => {
                   alert(`Contact form for ${provider.name} would open in a real application`);
                 }}

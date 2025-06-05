@@ -22,48 +22,48 @@ export default function ProviderCard({ provider, city, onContact, onClick }: Pro
   };
 
   return (
-    <Card 
+    <Card
       className="provider-card p-6 cursor-pointer border border-gray-100"
       onClick={onClick}
     >
       <div className="flex items-start space-x-4 mb-4">
-        <img 
-          src={provider.avatar} 
+        <img
+          src={provider.avatar}
           alt={provider.name}
           className="w-16 h-16 rounded-full object-cover"
         />
         <div className="flex-1">
-          <h3 className="font-bold text-lg text-gray-900">{provider.name}</h3>
-          <p className="text-iraq-green font-medium">{provider.profession}</p>
+          <h3 className="font-bold text-lg text-gray-900 truncate w-[150px]">{provider.name}</h3>
+          <p className="text-worktok-primary font-medium truncate w-[150px]">{provider.profession}</p>
           <div className="flex items-center mt-1">
             <div className="flex">
               {renderStars(parseFloat(provider.rating))}
             </div>
             <span className="ml-2 text-sm text-gray-600">
-              {provider.rating} ({provider.reviewCount} reviews)
+              {provider.rating} ({provider.reviewCount})
             </span>
           </div>
         </div>
         <div className="text-right">
           {provider.verified && (
-            <Badge className="bg-iraq-green text-white">
+            <Badge className="text-white">
               VERIFIED
             </Badge>
           )}
         </div>
       </div>
-      
+
       <p className="text-gray-600 mb-4 text-sm line-clamp-2">
         {provider.bio}
       </p>
-      
+
       <div className="flex items-center justify-between">
         <div className="text-sm text-gray-500 flex items-center">
           <MapPin className="w-4 h-4 mr-1" />
           {city?.name || "Baghdad"}, Iraq
         </div>
-        <Button 
-          className="bg-iraq-green hover:bg-green-700 text-white"
+        <Button
+          className="bg-green-500 hover:bg-green-700 text-white"
           onClick={(e) => {
             e.stopPropagation();
             onContact?.();

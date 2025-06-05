@@ -82,6 +82,10 @@ export class MemStorage implements IStorage {
       { name: "Painter", nameAr: "الدهان", icon: "fas fa-paint-roller", color: "text-orange-600", providerCount: 150 },
       { name: "Carpenter", nameAr: "النجارة", icon: "fas fa-hammer", color: "text-red-600", providerCount: 95 },
       { name: "Electrical", nameAr: "الكهرباء", icon: "fas fa-bolt", color: "text-yellow-600", providerCount: 180 },
+      { name: "Gardening", nameAr: "البستنة", icon: "fas fa-seedling", color: "text-green-600", providerCount: 110 },
+      { name: "Moving", nameAr: "النقل", icon: "fas fa-truck-moving", color: "text-teal-600", providerCount: 85 },
+      { name: "Pest Control", nameAr: "مكافحة الآفات", icon: "fas fa-bug", color: "text-pink-600", providerCount: 75 },
+      { name: "Appliance Repair", nameAr: "تصليح الأجهزة", icon: "fas fa-tools", color: "text-gray-700", providerCount: 130 },
     ];
 
     categories.forEach(cat => {

@@ -62,7 +62,7 @@ export default function Footer() {
               <h4 className="font-semibold mb-2">Contact Us</h4>
               <p className="mb-1">
                 <i className="fas fa-envelope mr-2"></i>
-                Admin@Worktok.Org
+                admin@worktok.org
               </p>
               <p>
                 <i className="fas fa-phone mr-2"></i>
@@ -70,7 +70,7 @@ export default function Footer() {
               </p>
             </div>
             <div className="text-center md:text-right text-gray-400">
-              <p>&copy; 2024 WorkTok. All Rights Reserved</p>
+              <p>&copy; 2025 WorkTok. All Rights Reserved</p>
             </div>
           </div>
         </div>

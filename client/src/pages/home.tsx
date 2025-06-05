@@ -104,7 +104,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section with Background Slider */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[50vh] flex items-center overflow-hidden">
         {/* Background Images Slider */}
         <div className="absolute inset-0 z-0">
           {backgroundImages.map((image, index) => (
@@ -128,7 +128,7 @@ export default function Home() {
         <div className="relative z-10 w-full">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center text-white">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight">
                 {content.hero.title}
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-gray-200 font-medium max-w-4xl mx-auto">
@@ -140,7 +140,7 @@ export default function Home() {
                 <p className="text-2xl md:text-3xl font-semibold text-white mb-2">
                   {content.hero.tagline}
                 </p>
-                <div className="text-xl md:text-2xl text-yellow-300 h-8">
+                <div className="text-xl md:text-2xl font-bold text-yellow-300 h-8">
                   {typedText}
                   <span className="animate-pulse">|</span>
                 </div>
@@ -288,8 +288,8 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-8 rounded-xl bg-blue-50 border border-blue-100">
-              <div className="w-16 h-16 mx-auto mb-6 bg-worktok-primary bg-opacity-10 rounded-full flex items-center justify-center">
-                <i className="fas fa-bolt text-2xl text-worktok-primary"></i>
+              <div className="w-16 h-16 mx-auto mb-6 bg-blue-600 bg-opacity-10 rounded-full flex items-center justify-center">
+                <i className="fas fa-bolt text-2xl text-blue-600"></i>
               </div>
               <h3 className="text-xl font-bold text-worktok-dark mb-4">Efficiency</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -298,8 +298,8 @@ export default function Home() {
             </div>
 
             <div className="text-center p-8 rounded-xl bg-green-50 border border-green-100">
-              <div className="w-16 h-16 mx-auto mb-6 bg-worktok-secondary bg-opacity-10 rounded-full flex items-center justify-center">
-                <i className="fas fa-shield-alt text-2xl text-worktok-secondary"></i>
+              <div className="w-16 h-16 mx-auto mb-6 bg-green-600 bg-opacity-10 rounded-full flex items-center justify-center">
+                <i className="fas fa-shield-alt text-2xl text-green-600"></i>
               </div>
               <h3 className="text-xl font-bold text-worktok-dark mb-4">Reliability</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -411,78 +411,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* App Download Section */}
-      <section className="py-16 bg-worktok-primary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{content.appDownload.title}</h2>
-            <p className="text-xl text-blue-100 mb-8">{content.appDownload.subtitle}</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Customer App */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
-              <div className="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center">
-                <Smartphone className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">{content.appDownload.customerApp.title}</h3>
-              <p className="text-blue-100 mb-6">{content.appDownload.customerApp.description}</p>
-              
-              <div className="space-y-3">
-                <div className="flex items-center justify-center space-x-4">
-                  <div className="bg-black rounded-lg px-4 py-2 flex items-center space-x-3 hover:bg-gray-800 transition-colors cursor-pointer">
-                    <i className="fab fa-google-play text-white text-xl"></i>
-                    <div className="text-left">
-                      <div className="text-xs text-gray-300">GET IT ON</div>
-                      <div className="text-sm font-semibold text-white">Google Play</div>
-                    </div>
-                  </div>
-                  <div className="bg-black rounded-lg px-4 py-2 flex items-center space-x-3 hover:bg-gray-800 transition-colors cursor-pointer">
-                    <i className="fab fa-apple text-white text-xl"></i>
-                    <div className="text-left">
-                      <div className="text-xs text-gray-300">Download on the</div>
-                      <div className="text-sm font-semibold text-white">App Store</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Provider App */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
-              <div className="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center">
-                <Download className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">{content.appDownload.providerApp.title}</h3>
-              <p className="text-blue-100 mb-6">{content.appDownload.providerApp.description}</p>
-              
-              <div className="space-y-3">
-                <div className="flex items-center justify-center space-x-4">
-                  <div className="bg-black rounded-lg px-4 py-2 flex items-center space-x-3 hover:bg-gray-800 transition-colors cursor-pointer">
-                    <i className="fab fa-google-play text-white text-xl"></i>
-                    <div className="text-left">
-                      <div className="text-xs text-gray-300">GET IT ON</div>
-                      <div className="text-sm font-semibold text-white">Google Play</div>
-                    </div>
-                  </div>
-                  <div className="bg-black rounded-lg px-4 py-2 flex items-center space-x-3 hover:bg-gray-800 transition-colors cursor-pointer">
-                    <i className="fab fa-apple text-white text-xl"></i>
-                    <div className="text-left">
-                      <div className="text-xs text-gray-300">Download on the</div>
-                      <div className="text-sm font-semibold text-white">App Store</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-8">
-            <p className="text-blue-100">{content.appDownload.downloadText}</p>
-          </div>
-        </div>
-      </section>
-
       {/* Inquiry Form Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -554,6 +482,78 @@ export default function Home() {
               </div>
             </form>
           </Card>
+        </div>
+      </section>
+
+      {/* App Download Section */}
+      <section className="py-16 bg-worktok-primary text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{content.appDownload.title}</h2>
+            <p className="text-xl text-blue-100 mb-8">{content.appDownload.subtitle}</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Customer App */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
+              <div className="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center">
+                <Smartphone className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">{content.appDownload.customerApp.title}</h3>
+              <p className="text-blue-100 mb-6">{content.appDownload.customerApp.description}</p>
+              
+              <div className="space-y-3">
+                <div className="flex items-center justify-center space-x-4">
+                  <div className="bg-black rounded-lg px-4 py-2 flex items-center space-x-3 hover:bg-gray-800 transition-colors cursor-pointer">
+                    <i className="fab fa-google-play text-white text-xl"></i>
+                    <div className="text-left">
+                      <div className="text-xs text-gray-300">GET IT ON</div>
+                      <div className="text-sm font-semibold text-white">Google Play</div>
+                    </div>
+                  </div>
+                  <div className="bg-black rounded-lg px-4 py-2 flex items-center space-x-3 hover:bg-gray-800 transition-colors cursor-pointer">
+                    <i className="fab fa-apple text-white text-xl"></i>
+                    <div className="text-left">
+                      <div className="text-xs text-gray-300">Download on the</div>
+                      <div className="text-sm font-semibold text-white">App Store</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Provider App */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
+              <div className="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center">
+                <Download className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">{content.appDownload.providerApp.title}</h3>
+              <p className="text-blue-100 mb-6">{content.appDownload.providerApp.description}</p>
+              
+              <div className="space-y-3">
+                <div className="flex items-center justify-center space-x-4">
+                  <div className="bg-black rounded-lg px-4 py-2 flex items-center space-x-3 hover:bg-gray-800 transition-colors cursor-pointer">
+                    <i className="fab fa-google-play text-white text-xl"></i>
+                    <div className="text-left">
+                      <div className="text-xs text-gray-300">GET IT ON</div>
+                      <div className="text-sm font-semibold text-white">Google Play</div>
+                    </div>
+                  </div>
+                  <div className="bg-black rounded-lg px-4 py-2 flex items-center space-x-3 hover:bg-gray-800 transition-colors cursor-pointer">
+                    <i className="fab fa-apple text-white text-xl"></i>
+                    <div className="text-left">
+                      <div className="text-xs text-gray-300">Download on the</div>
+                      <div className="text-sm font-semibold text-white">App Store</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-blue-100">{content.appDownload.downloadText}</p>
+          </div>
         </div>
       </section>
 

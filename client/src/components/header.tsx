@@ -74,10 +74,10 @@ export default function Header() {
                 </SelectContent>
               </Select>
             </div>
-            <Button variant="outline" className="border-worktok-primary text-worktok-primary hover:bg-worktok-primary hover:text-white">
+            <Button variant="outline" className="border-worktok-primary text-worktok-primary hover:bg-worktok-primary hover:text-white" onClick={() => setIsAuthModalOpen(true)}>
               Log In
             </Button>
-            <Button className="bg-worktok-primary hover:bg-blue-600 text-white">
+            <Button className="bg-worktok-primary hover:bg-green-600 text-white" onClick={() => setIsAuthModalOpen(true)}>
               Sign Up
             </Button>
           </div>
@@ -127,10 +127,10 @@ export default function Header() {
               </Link>
               <div className="pt-4 border-t border-gray-200">
                 <div className="flex flex-col space-y-2">
-                  <Button variant="outline" className="border-worktok-primary text-worktok-primary">
+                  <Button variant="outline" className="border-worktok-primary text-worktok-primary" onClick={() => setIsAuthModalOpen(true)}>
                     Log In
                   </Button>
-                  <Button className="bg-worktok-primary hover:bg-blue-600 text-white">
+                  <Button className="bg-worktok-primary hover:bg-green-600 text-white" onClick={() => setIsAuthModalOpen(true)}>
                     Sign Up
                   </Button>
                 </div>
@@ -139,6 +139,8 @@ export default function Header() {
           </div>
         )}
       </div>
+
+      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
     </header>
   );
 }
