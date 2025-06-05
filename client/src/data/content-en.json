@@ -4,9 +4,11 @@
     "logoSubtext": "Iraqi House Services",
     "navigation": {
       "home": "Home",
-      "services": "Services",
+      "categories": "Categories",
+      "jobs": "Jobs",
       "providers": "Providers",
-      "about": "About"
+      "about": "About Us",
+      "contact": "Contact Us"
     },
     "actions": {
       "login": "Log In",
@@ -121,6 +123,117 @@
       "description": "Join our network and grow your business by connecting with customers"
     },
     "downloadText": "Available on both platforms"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about our platform",
+    "moreButton": "Show More",
+    "lessButton": "Show Less",
+    "questions": [
+      {
+        "question": "How do I find service providers in my area?",
+        "answer": "Simply enter your location and the type of service you need in our search bar. Our platform will show you verified providers near you with ratings and reviews."
+      },
+      {
+        "question": "Are all service providers verified?",
+        "answer": "Yes, all service providers go through a verification process including background checks, license verification, and quality assessments before joining our platform."
+      },
+      {
+        "question": "How do I pay for services?",
+        "answer": "You can pay through our secure platform using credit cards, debit cards, or cash on delivery. All payments are processed securely through our system."
+      },
+      {
+        "question": "What if I'm not satisfied with the service?",
+        "answer": "We have a customer satisfaction guarantee. If you're not happy with the service, contact our support team within 24 hours and we'll work to resolve the issue."
+      },
+      {
+        "question": "How do I become a service provider?",
+        "answer": "Download our provider app, complete the registration process, submit required documents for verification, and once approved, you can start accepting bookings."
+      },
+      {
+        "question": "What areas do you cover in Iraq?",
+        "answer": "We currently operate in major Iraqi cities including Baghdad, Basra, Erbil, Mosul, and Najaf, with plans to expand to more cities soon."
+      },
+      {
+        "question": "How do I cancel or reschedule a booking?",
+        "answer": "You can cancel or reschedule bookings through the app up to 2 hours before the scheduled time. Some providers may have different cancellation policies."
+      },
+      {
+        "question": "Is there a minimum service charge?",
+        "answer": "Service charges vary by provider and service type. Each provider sets their own rates, which are displayed upfront before you book."
+      },
+      {
+        "question": "How do I contact customer support?",
+        "answer": "You can reach our customer support through the app's help section, email us at support@worktok.org, or call our helpline at (+964) 7519-904-575."
+      },
+      {
+        "question": "Do you offer emergency services?",
+        "answer": "Yes, we have emergency service providers available 24/7 for urgent repairs like plumbing leaks, electrical issues, and lock-outs."
+      }
+    ]
+  },
+  "inquiry": {
+    "title": "Have a Question?",
+    "subtitle": "Get in touch with us for any inquiries or support",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "mobile": "Mobile Number",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Inquiry",
+      "namePlaceholder": "Enter your full name",
+      "emailPlaceholder": "Enter your email address",
+      "mobilePlaceholder": "Enter your mobile number",
+      "subjectPlaceholder": "Enter subject",
+      "messagePlaceholder": "Enter your message here..."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to your account",
+      "email": "Email Address",
+      "password": "Password",
+      "submit": "Sign In",
+      "forgotPassword": "Forgot Password?",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign Up"
+    },
+    "register": {
+      "title": "Create Account",
+      "subtitle": "Join WorkTok today",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "phone": "Phone Number",
+      "submit": "Create Account",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign In"
+    },
+    "forgotPassword": {
+      "title": "Reset Password",
+      "subtitle": "Enter your email to receive reset instructions",
+      "email": "Email Address",
+      "submit": "Send Reset Link",
+      "backToLogin": "Back to Sign In"
+    },
+    "resetPassword": {
+      "title": "New Password",
+      "subtitle": "Enter your new password",
+      "password": "New Password",
+      "confirmPassword": "Confirm New Password",
+      "submit": "Reset Password"
+    },
+    "otpVerify": {
+      "title": "Verify Account",
+      "subtitle": "Enter the verification code sent to your email",
+      "code": "Verification Code",
+      "submit": "Verify",
+      "resend": "Resend Code"
+    }
   },
   "footer": {
     "description": "Iraq's leading platform for connecting homeowners with trusted service professionals. Quality service, guaranteed trust.",

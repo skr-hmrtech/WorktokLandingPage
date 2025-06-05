@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card } from "@/components/ui/card";
-import { Search, Smartphone, Download } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Search, Smartphone, Download, ChevronDown, ChevronUp } from "lucide-react";
 import ServiceCategoryCard from "@/components/service-category-card";
 import ProviderCard from "@/components/provider-card";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -18,6 +19,8 @@ export default function Home() {
   const [currentTypingText, setCurrentTypingText] = useState(0);
   const [typedText, setTypedText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
+  const [showMoreCategories, setShowMoreCategories] = useState(false);
+  const [showMoreFAQ, setShowMoreFAQ] = useState(false);
 
   const { content, language } = useLanguage();
 
@@ -101,7 +104,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section with Background Slider */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         {/* Background Images Slider */}
         <div className="absolute inset-0 z-0">
           {backgroundImages.map((image, index) => (
@@ -215,37 +218,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Indicators */}
+      {/* Trust Indicators - Card Layout */}
       <section className="bg-white py-16 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-worktok-dark mb-4">A leading home repairs and professional services application in Iraq</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-worktok-dark mb-4">
+              {content.stats.title}
+            </h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="p-6">
-              <div className="text-4xl font-bold text-worktok-primary mb-2">
-                {stats?.completedServices?.toLocaleString() || "15,000"}+
-              </div>
-              <div className="text-gray-600 font-medium">Customer count</div>
-            </div>
-            <div className="p-6">
-              <div className="text-4xl font-bold text-worktok-primary mb-2">
-                {stats?.verifiedProviders || 2500}+
-              </div>
-              <div className="text-gray-600 font-medium">Service Providers</div>
-            </div>
-            <div className="p-6">
-              <div className="text-4xl font-bold text-worktok-primary mb-2">
-                50+
-              </div>
-              <div className="text-gray-600 font-medium">Team members</div>
-            </div>
-            <div className="p-6">
-              <div className="text-4xl font-bold text-worktok-primary mb-2">
-                40+
-              </div>
-              <div className="text-gray-600 font-medium">Various Job Categories</div>
-            </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {content.stats.metrics.map((metric, index) => (
+              <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow duration-300 border-2 border-gray-100">
+                <div className="text-3xl md:text-4xl font-bold text-worktok-primary mb-2">
+                  {metric.value}
+                </div>
+                <div className="text-gray-600 font-medium">{metric.label}</div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

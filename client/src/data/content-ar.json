@@ -4,9 +4,11 @@
     "logoSubtext": "خدمات البيت العراقي",
     "navigation": {
       "home": "الرئيسية",
-      "services": "الخدمات",
+      "categories": "الفئات",
+      "jobs": "الوظائف",
       "providers": "مقدمي الخدمات",
-      "about": "حولنا"
+      "about": "حولنا",
+      "contact": "اتصل بنا"
     },
     "actions": {
       "login": "تسجيل الدخول",
