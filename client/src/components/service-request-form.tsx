@@ -68,7 +68,7 @@ export default function ServiceRequestForm() {
   };
 
   return (
-    <section className="bg-iraq-green py-16">
+    <section className="bg-worktok-secondary py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl font-bold text-white mb-4">Need a Service Provider Now?</h2>
         <p className="text-xl text-green-100 mb-8">
@@ -191,7 +191,7 @@ export default function ServiceRequestForm() {
               <div className="md:col-span-2">
                 <Button 
                   type="submit" 
-                  className="w-full bg-iraq-red hover:bg-red-700 text-white py-4 text-lg"
+                  className="w-full bg-worktok-primary hover:bg-blue-600 text-white py-4 text-lg font-semibold"
                   disabled={createRequestMutation.isPending}
                 >
                   {createRequestMutation.isPending ? (
