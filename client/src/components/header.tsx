@@ -1,14 +1,16 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Home, Users, Briefcase, Info, Menu, X } from "lucide-react";
+import { Home, Users, Briefcase, Info, Menu, X, Phone, Folder, MapPin } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/hooks/useLanguage";
+import AuthModal from "./auth-modal";
 
 export default function Header() {
   const [location] = useLocation();
   const { language, setLanguage, content } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">

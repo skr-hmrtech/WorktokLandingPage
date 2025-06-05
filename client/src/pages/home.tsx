@@ -244,14 +244,14 @@ export default function Home() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-worktok-dark mb-4">Most Popular Home, Repair, and Professional Services Nearby</h2>
+            <h2 className="text-3xl font-bold text-worktok-dark mb-4">{content.services.title}</h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Explore our most popular services that our customers love, and bid farewell to spend money and time on unreliable services. Step into a world of seamless, high-quality home & property solutions.
+              {content.services.subtitle}
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {categories.slice(0, 5).map((category) => (
+            {categories.slice(0, showMoreCategories ? 10 : 5).map((category) => (
               <ServiceCategoryCard
                 key={category.id}
                 category={category}
@@ -259,6 +259,23 @@ export default function Home() {
               />
             ))}
           </div>
+
+          {categories.length > 5 && (
+            <div className="text-center mt-8">
+              <Button
+                variant="outline"
+                onClick={() => setShowMoreCategories(!showMoreCategories)}
+                className="px-8 py-3 border-worktok-primary text-worktok-primary hover:bg-worktok-primary hover:text-white"
+              >
+                {showMoreCategories ? "Show Less" : "Show More"}
+                {showMoreCategories ? (
+                  <ChevronUp className="ml-2 w-4 h-4" />
+                ) : (
+                  <ChevronDown className="ml-2 w-4 h-4" />
+                )}
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -463,6 +480,123 @@ export default function Home() {
           <div className="text-center mt-8">
             <p className="text-blue-100">{content.appDownload.downloadText}</p>
           </div>
+        </div>
+      </section>
+
+      {/* Inquiry Form Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-worktok-dark mb-4">{content.inquiry.title}</h2>
+            <p className="text-xl text-gray-600">{content.inquiry.subtitle}</p>
+          </div>
+
+          <Card className="p-8 shadow-lg">
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {content.inquiry.form.name}
+                  </label>
+                  <Input 
+                    placeholder={content.inquiry.form.namePlaceholder}
+                    className="w-full"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {content.inquiry.form.email}
+                  </label>
+                  <Input 
+                    type="email"
+                    placeholder={content.inquiry.form.emailPlaceholder}
+                    className="w-full"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {content.inquiry.form.mobile}
+                  </label>
+                  <Input 
+                    placeholder={content.inquiry.form.mobilePlaceholder}
+                    className="w-full"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {content.inquiry.form.subject}
+                  </label>
+                  <Input 
+                    placeholder={content.inquiry.form.subjectPlaceholder}
+                    className="w-full"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {content.inquiry.form.message}
+                </label>
+                <textarea 
+                  placeholder={content.inquiry.form.messagePlaceholder}
+                  rows={5}
+                  className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-worktok-primary focus:border-transparent resize-none"
+                />
+              </div>
+
+              <div className="text-center">
+                <Button className="bg-worktok-primary hover:bg-green-600 text-white px-8 py-3">
+                  {content.inquiry.form.submit}
+                </Button>
+              </div>
+            </form>
+          </Card>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-worktok-dark mb-4">{content.faq.title}</h2>
+            <p className="text-xl text-gray-600">{content.faq.subtitle}</p>
+          </div>
+
+          <div className="space-y-4">
+            {content.faq.questions.slice(0, showMoreFAQ ? 10 : 5).map((faq, index) => (
+              <Collapsible key={index}>
+                <CollapsibleTrigger className="w-full text-left p-6 bg-gray-50 hover:bg-gray-100 rounded-lg border border-gray-200 transition-colors duration-200">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold text-worktok-dark">{faq.question}</h3>
+                    <ChevronDown className="w-5 h-5 text-gray-500" />
+                  </div>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="p-6 bg-white border-l-4 border-worktok-primary">
+                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                </CollapsibleContent>
+              </Collapsible>
+            ))}
+          </div>
+
+          {content.faq.questions.length > 5 && (
+            <div className="text-center mt-8">
+              <Button
+                variant="outline"
+                onClick={() => setShowMoreFAQ(!showMoreFAQ)}
+                className="px-8 py-3 border-worktok-primary text-worktok-primary hover:bg-worktok-primary hover:text-white"
+              >
+                {showMoreFAQ ? content.faq.lessButton : content.faq.moreButton}
+                {showMoreFAQ ? (
+                  <ChevronUp className="ml-2 w-4 h-4" />
+                ) : (
+                  <ChevronDown className="ml-2 w-4 h-4" />
+                )}
+              </Button>
+            </div>
+          )}
         </div>
       </section>
     </div>
