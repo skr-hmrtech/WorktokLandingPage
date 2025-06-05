@@ -24,10 +24,11 @@
   --ring: 20 14.3% 4.1%;
   --radius: 0.5rem;
   
-  /* Iraq-specific colors */
-  --iraq-green: 122 49% 32%; /* #2D7A2D */
-  --iraq-red: 347 70% 50%; /* #C41E3A */
-  --trust-blue: 225 78% 40%; /* #1E40AF */
+  /* WorkTok brand colors */
+  --worktok-primary: 207 90% 54%; /* #2196F3 - Main blue */
+  --worktok-secondary: 122 49% 32%; /* #2D7A2D - Success green */
+  --worktok-accent: 347 70% 50%; /* #C41E3A - Accent red */
+  --worktok-dark: 210 40% 20%; /* Dark blue-gray */
 }
 
 .dark {
@@ -65,32 +66,40 @@
 }
 
 @layer utilities {
-  .text-iraq-green {
-    color: hsl(var(--iraq-green));
+  .text-worktok-primary {
+    color: hsl(var(--worktok-primary));
   }
   
-  .bg-iraq-green {
-    background-color: hsl(var(--iraq-green));
+  .bg-worktok-primary {
+    background-color: hsl(var(--worktok-primary));
   }
   
-  .text-iraq-red {
-    color: hsl(var(--iraq-red));
+  .text-worktok-secondary {
+    color: hsl(var(--worktok-secondary));
   }
   
-  .bg-iraq-red {
-    background-color: hsl(var(--iraq-red));
+  .bg-worktok-secondary {
+    background-color: hsl(var(--worktok-secondary));
   }
   
-  .text-trust-blue {
-    color: hsl(var(--trust-blue));
+  .text-worktok-accent {
+    color: hsl(var(--worktok-accent));
   }
   
-  .bg-trust-blue {
-    background-color: hsl(var(--trust-blue));
+  .bg-worktok-accent {
+    background-color: hsl(var(--worktok-accent));
+  }
+  
+  .text-worktok-dark {
+    color: hsl(var(--worktok-dark));
+  }
+  
+  .bg-worktok-dark {
+    background-color: hsl(var(--worktok-dark));
   }
 
   .hero-gradient {
-    background: linear-gradient(135deg, hsl(var(--iraq-green)) 0%, hsl(142 71% 45%) 100%);
+    background: linear-gradient(135deg, hsl(var(--worktok-primary)) 0%, hsl(var(--worktok-secondary)) 100%);
   }
 
   .service-card {

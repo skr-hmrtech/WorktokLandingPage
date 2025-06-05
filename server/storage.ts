@@ -76,12 +76,12 @@ export class MemStorage implements IStorage {
   private initializeData() {
     // Initialize service categories
     const categories = [
-      { name: "Plumbing", nameAr: "السباكة", icon: "fas fa-wrench", color: "text-iraq-green", providerCount: 250 },
-      { name: "Electrical", nameAr: "الكهرباء", icon: "fas fa-bolt", color: "text-yellow-600", providerCount: 180 },
-      { name: "AC Repair", nameAr: "تصليح التكييف", icon: "fas fa-snowflake", color: "text-blue-600", providerCount: 320 },
+      { name: "Air Condition", nameAr: "تكييف الهواء", icon: "fas fa-snowflake", color: "text-blue-600", providerCount: 320 },
+      { name: "Plumbing", nameAr: "السباكة", icon: "fas fa-wrench", color: "text-worktok-secondary", providerCount: 250 },
       { name: "Cleaning", nameAr: "التنظيف", icon: "fas fa-broom", color: "text-purple-600", providerCount: 400 },
-      { name: "Painting", nameAr: "الدهان", icon: "fas fa-paint-roller", color: "text-orange-600", providerCount: 150 },
-      { name: "Carpentry", nameAr: "النجارة", icon: "fas fa-hammer", color: "text-red-600", providerCount: 95 },
+      { name: "Painter", nameAr: "الدهان", icon: "fas fa-paint-roller", color: "text-orange-600", providerCount: 150 },
+      { name: "Carpenter", nameAr: "النجارة", icon: "fas fa-hammer", color: "text-red-600", providerCount: 95 },
+      { name: "Electrical", nameAr: "الكهرباء", icon: "fas fa-bolt", color: "text-yellow-600", providerCount: 180 },
     ];
 
     categories.forEach(cat => {
