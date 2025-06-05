@@ -1,19 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card } from "@/components/ui/card";
-import { Search } from "lucide-react";
+import { Search, Smartphone, Download } from "lucide-react";
 import ServiceCategoryCard from "@/components/service-category-card";
 import ProviderCard from "@/components/provider-card";
-import ServiceRequestForm from "@/components/service-request-form";
+import { useLanguage } from "@/hooks/useLanguage";
 import type { ServiceCategory, ServiceProvider, City } from "@shared/schema";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentTypingText, setCurrentTypingText] = useState(0);
+  const [typedText, setTypedText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+
+  const { content, language } = useLanguage();
 
   const { data: categories = [] } = useQuery<ServiceCategory[]>({
     queryKey: ["/api/categories"],
@@ -36,6 +42,53 @@ export default function Home() {
     queryKey: ["/api/stats"],
   });
 
+  // Background images for slider
+  const backgroundImages = [
+    "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080"
+  ];
+
+  // Typing animation effect
+  useEffect(() => {
+    const typingTexts = content.hero.typingTexts;
+    const currentText = typingTexts[currentTypingText];
+    
+    if (isTyping) {
+      if (typedText.length < currentText.length) {
+        const timer = setTimeout(() => {
+          setTypedText(currentText.slice(0, typedText.length + 1));
+        }, 100);
+        return () => clearTimeout(timer);
+      } else {
+        const timer = setTimeout(() => {
+          setIsTyping(false);
+        }, 2000);
+        return () => clearTimeout(timer);
+      }
+    } else {
+      if (typedText.length > 0) {
+        const timer = setTimeout(() => {
+          setTypedText(typedText.slice(0, -1));
+        }, 50);
+        return () => clearTimeout(timer);
+      } else {
+        setCurrentTypingText((prev) => (prev + 1) % typingTexts.length);
+        setIsTyping(true);
+      }
+    }
+  }, [typedText, isTyping, currentTypingText, content.hero.typingTexts]);
+
+  // Background image slider
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [backgroundImages.length]);
+
   const handleSearch = () => {
     // Navigate to services page with search parameters
     const searchParams = new URLSearchParams();
@@ -47,72 +100,96 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="hero-gradient text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Find Top-Rated Iraqi Property & Professional Services with Just One Click
+      {/* Hero Section with Background Slider */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Background Images Slider */}
+        <div className="absolute inset-0 z-0">
+          {backgroundImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <img
+                src={image}
+                alt={`Background ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+            </div>
+          ))}
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 w-full">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="text-center text-white">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                {content.hero.title}
               </h1>
-              <p className="text-xl mb-8 text-blue-100 font-medium">
-                Say goodbye to unfulfilled promises, hidden fees, and unprofessional services. Experience transparency, reliability, and excellence in every interaction.
+              <p className="text-xl md:text-2xl mb-8 text-gray-200 font-medium max-w-4xl mx-auto">
+                {content.hero.subtitle}
               </p>
-              <div className="mb-8">
-                <p className="text-2xl font-semibold text-white mb-2">With WorkTok, Life Becomes Easier</p>
-              </div>
               
-              {/* Search Bar */}
-              <Card className="p-6 shadow-xl">
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="flex-1">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      What service do you need?
-                    </label>
-                    <div className="relative">
-                      <Search className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
-                      <Input
-                        placeholder="Plumbing, Electrical, Cleaning..."
-                        className="pl-10 text-gray-900"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                      />
+              {/* Typing Animation */}
+              <div className="mb-8">
+                <p className="text-2xl md:text-3xl font-semibold text-white mb-2">
+                  {content.hero.tagline}
+                </p>
+                <div className="text-xl md:text-2xl text-yellow-300 h-8">
+                  {typedText}
+                  <span className="animate-pulse">|</span>
+                </div>
+              </div>
+
+              {/* Static Search Bar */}
+              <div className="max-w-4xl mx-auto">
+                <Card className="p-6 shadow-2xl bg-white/95 backdrop-blur-sm">
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="flex-1">
+                      <label className="block text-sm font-medium text-gray-700 mb-2 text-left">
+                        {content.hero.serviceLabel}
+                      </label>
+                      <div className="relative">
+                        <Search className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
+                        <Input
+                          placeholder={content.hero.searchPlaceholder}
+                          className="pl-10 text-gray-900"
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2 text-left">
+                        {content.hero.cityLabel}
+                      </label>
+                      <Select value={selectedCity} onValueChange={setSelectedCity}>
+                        <SelectTrigger className="text-gray-900">
+                          <SelectValue placeholder={content.hero.cityPlaceholder} />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {cities.map((city) => (
+                            <SelectItem key={city.id} value={city.id.toString()}>
+                              {language === 'ar' ? city.nameAr : city.name}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="flex items-end">
+                      <Button 
+                        className="w-full bg-worktok-primary hover:bg-green-600 text-white font-semibold py-3"
+                        onClick={handleSearch}
+                      >
+                        <Search className="w-4 h-4 mr-2" />
+                        {content.hero.cta}
+                      </Button>
                     </div>
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">City</label>
-                    <Select value={selectedCity} onValueChange={setSelectedCity}>
-                      <SelectTrigger className="text-gray-900">
-                        <SelectValue placeholder="Select city" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {cities.map((city) => (
-                          <SelectItem key={city.id} value={city.id.toString()}>
-                            {city.name}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="flex items-end">
-                    <Button 
-                      className="w-full bg-worktok-primary hover:bg-blue-600 text-white font-semibold py-3"
-                      onClick={handleSearch}
-                    >
-                      <Search className="w-4 h-4 mr-2" />
-                      Get Started
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            </div>
-            
-            <div className="hidden lg:block">
-              <img 
-                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                alt="Professional home repair service" 
-                className="rounded-2xl shadow-2xl w-full h-auto"
-              />
+                </Card>
+              </div>
             </div>
           </div>
         </div>
@@ -122,16 +199,16 @@ export default function Home() {
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-worktok-dark mb-6">Who We Are</h2>
+            <h2 className="text-4xl font-bold text-worktok-dark mb-6">{content.whoWeAre.title}</h2>
             <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto">
-              Your One-Stop App for Home & Property Repairs, Maintenance, and Professional Services
+              {content.whoWeAre.subtitle}
             </p>
             <p className="text-lg text-gray-700 leading-relaxed max-w-5xl mx-auto">
-              WorkTok revolutionizes home and professional service bookings, offering a streamlined solution to connect you with top-rated local providers through two user-friendly apps. Supported by excellent customer service, WorkTok ensures a seamless experience, removing the hassle from finding reliable services.
+              {content.whoWeAre.description}
             </p>
             <div className="mt-8">
               <p className="text-lg text-gray-700 max-w-4xl mx-auto">
-                Join WorkTok for stress-free access to all your service needs with just a tap, and enjoy high-quality, quick solutions while supporting local talent in Iraq. Welcome to effortless living with WorkTok, where convenience and quality meet.
+                {content.whoWeAre.additionalText}
               </p>
             </div>
           </div>
@@ -327,8 +404,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Service Request CTA */}
-      <ServiceRequestForm />
+      {/* App Download Section */}
+      <section className="py-16 bg-worktok-primary text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{content.appDownload.title}</h2>
+            <p className="text-xl text-blue-100 mb-8">{content.appDownload.subtitle}</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Customer App */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
+              <div className="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center">
+                <Smartphone className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">{content.appDownload.customerApp.title}</h3>
+              <p className="text-blue-100 mb-6">{content.appDownload.customerApp.description}</p>
+              
+              <div className="space-y-3">
+                <div className="flex items-center justify-center space-x-4">
+                  <div className="bg-black rounded-lg px-4 py-2 flex items-center space-x-3 hover:bg-gray-800 transition-colors cursor-pointer">
+                    <i className="fab fa-google-play text-white text-xl"></i>
+                    <div className="text-left">
+                      <div className="text-xs text-gray-300">GET IT ON</div>
+                      <div className="text-sm font-semibold text-white">Google Play</div>
+                    </div>
+                  </div>
+                  <div className="bg-black rounded-lg px-4 py-2 flex items-center space-x-3 hover:bg-gray-800 transition-colors cursor-pointer">
+                    <i className="fab fa-apple text-white text-xl"></i>
+                    <div className="text-left">
+                      <div className="text-xs text-gray-300">Download on the</div>
+                      <div className="text-sm font-semibold text-white">App Store</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Provider App */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
+              <div className="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center">
+                <Download className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">{content.appDownload.providerApp.title}</h3>
+              <p className="text-blue-100 mb-6">{content.appDownload.providerApp.description}</p>
+              
+              <div className="space-y-3">
+                <div className="flex items-center justify-center space-x-4">
+                  <div className="bg-black rounded-lg px-4 py-2 flex items-center space-x-3 hover:bg-gray-800 transition-colors cursor-pointer">
+                    <i className="fab fa-google-play text-white text-xl"></i>
+                    <div className="text-left">
+                      <div className="text-xs text-gray-300">GET IT ON</div>
+                      <div className="text-sm font-semibold text-white">Google Play</div>
+                    </div>
+                  </div>
+                  <div className="bg-black rounded-lg px-4 py-2 flex items-center space-x-3 hover:bg-gray-800 transition-colors cursor-pointer">
+                    <i className="fab fa-apple text-white text-xl"></i>
+                    <div className="text-left">
+                      <div className="text-xs text-gray-300">Download on the</div>
+                      <div className="text-sm font-semibold text-white">App Store</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-blue-100">{content.appDownload.downloadText}</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
