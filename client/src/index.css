@@ -25,8 +25,8 @@
   --radius: 0.5rem;
   
   /* WorkTok brand colors */
-  --worktok-primary: 110 48% 36%; /* #429745 - Main green */
-  --worktok-secondary: 110 48% 36%; /* #429745 - Success green */
+  --worktok-primary: 134 55% 35%; /* #429745 - Main green */
+  --worktok-secondary: 134 55% 35%; /* #429745 - Success green */
   --worktok-accent: 347 70% 50%; /* #C41E3A - Accent red */
   --worktok-dark: 210 40% 20%; /* Dark blue-gray */
 }

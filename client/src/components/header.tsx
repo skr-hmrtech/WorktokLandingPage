@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Home, Users, Briefcase, Info, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function Header() {
   const [location] = useLocation();
-  const [language, setLanguage] = useState("en");
+  const { language, setLanguage, content } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -20,8 +21,8 @@ export default function Header() {
                 <span className="text-white font-bold text-lg">W</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-worktok-dark">WorkTok</span>
-                <span className="text-xs text-gray-500 -mt-1">Iraqi House Services</span>
+                <span className="text-xl font-bold text-worktok-dark">{content.header.logoText}</span>
+                <span className="text-xs text-gray-500 -mt-1">{content.header.logoSubtext}</span>
               </div>
             </Link>
           </div>
