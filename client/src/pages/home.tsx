@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Shield, Clock, Award, Star, MapPin, Phone, Mail, MessageCircle, ChevronDown, ChevronUp, HelpCircle, Download } from "lucide-react";
+import { ArrowRight, Shield, Clock, Award, Star, MapPin, Phone, Mail, MessageCircle, ChevronDown, ChevronUp, HelpCircle, Download, CheckCircle, Search, Users } from "lucide-react";
 import { Link } from "wouter";
 import ServiceCategoryCard from "@/components/service-category-card";
 import ProviderCard from "@/components/provider-card";
