@@ -240,8 +240,8 @@ export default function Home() {
               </div>
             </AnimatedSection>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-              {categories.slice(0, 10).map((category, index) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {categories.slice(0, 4).map((category, index) => (
                 <AnimatedSection key={category.id} animationType="slideUp" delay={index * 50}>
                   <div className="group hover:scale-105 transition-all duration-300">
                     <ServiceCategoryCard
@@ -256,7 +256,7 @@ export default function Home() {
             <AnimatedSection animationType="slideUp" delay={500}>
               <div className="text-center mt-12">
                 <Link href="/services">
-                  <Button variant="outline" size="lg" className="hover:scale-105 transition-all duration-300 px-8 py-4 text-lg rounded-full border-2">
+                  <Button variant="outline" size="lg" className="hover:scale-105 transition-all duration-300 px-8 py-4 text-lg rounded-full border-2 border-green-600 text-green-600 hover:bg-green-50">
                     View All Services
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
