@@ -5,12 +5,13 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Shield, Clock, Award, Star, MapPin, Phone, Mail, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, Clock, Award, Star, MapPin, Phone, Mail, CheckCircle, Search, Users } from "lucide-react";
 import { Link } from "wouter";
 import ServiceCategoryCard from "@/components/service-category-card";
 import ProviderCard from "@/components/provider-card";
 import AnimatedSection from "@/components/animated-section";
 import TypingText from "@/components/typing-text";
+import ScrollToTop from "@/components/scroll-to-top";
 import { useLanguage } from "@/hooks/useLanguage";
 import type { ServiceCategory, ServiceProvider, City } from "@shared/schema";
 
@@ -363,6 +364,85 @@ export default function Home() {
                       <CardDescription className="text-lg text-white/90 leading-relaxed">
                         {description}
                       </CardDescription>
+                    </CardContent>
+                  </Card>
+                </AnimatedSection>
+              ))}
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* At Your Doorstep Section */}
+      <AnimatedSection animationType="fadeIn">
+        <section className="py-20 bg-gradient-to-r from-green-50 to-blue-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <AnimatedSection animationType="slideUp">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                  {language === 'ar' ? 'خدمات في متناول يدك' : 'At Your Doorstep'}
+                </h2>
+              </AnimatedSection>
+              <AnimatedSection animationType="slideUp" delay={200}>
+                <div className="text-2xl md:text-3xl text-green-600 font-semibold h-16 flex items-center justify-center">
+                  <TypingText 
+                    texts={language === 'ar' ? [
+                      'خدمات تنظيف عالية الجودة',
+                      'إصلاحات سريعة وموثوقة',
+                      'خدمات صيانة احترافية',
+                      'حلول منزلية شاملة',
+                      'فنيون معتمدون ومدربون'
+                    ] : [
+                      'Quality cleaning services delivered',
+                      'Fast and reliable repairs at home',
+                      'Professional maintenance solutions',
+                      'Complete home service solutions',
+                      'Certified and trained technicians'
+                    ]}
+                    speed={80}
+                    deleteSpeed={40}
+                    delay={1500}
+                    className="text-green-600 font-bold"
+                  />
+                </div>
+              </AnimatedSection>
+              <AnimatedSection animationType="slideUp" delay={400}>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-6">
+                  {language === 'ar' 
+                    ? 'نحن نقدم خدمات عالية الجودة مباشرة إلى منزلك. من التنظيف إلى الإصلاحات، نحن هنا لخدمتك.'
+                    : 'We bring high-quality services directly to your home. From cleaning to repairs, we are here to serve you.'
+                  }
+                </p>
+              </AnimatedSection>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: language === 'ar' ? 'خدمة سريعة' : 'Quick Service',
+                  description: language === 'ar' ? 'استجابة سريعة خلال ساعات' : 'Fast response within hours',
+                  icon: '⚡',
+                  delay: 0
+                },
+                {
+                  title: language === 'ar' ? 'جودة مضمونة' : 'Quality Assured',
+                  description: language === 'ar' ? 'ضمان على جميع الخدمات' : 'Guarantee on all services',
+                  icon: '✅',
+                  delay: 150
+                },
+                {
+                  title: language === 'ar' ? 'أسعار منافسة' : 'Competitive Prices',
+                  description: language === 'ar' ? 'أفضل الأسعار في السوق' : 'Best prices in the market',
+                  icon: '💰',
+                  delay: 300
+                }
+              ].map((feature, index) => (
+                <AnimatedSection key={index} animationType="slideUp" delay={feature.delay}>
+                  <Card className="text-center p-8 bg-white shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-l-4 border-green-500">
+                    <CardContent className="pt-6">
+                      <div className="text-4xl mb-4">{feature.icon}</div>
+                      <h3 className="text-2xl font-bold text-gray-800 mb-4">{feature.title}</h3>
+                      <p className="text-gray-600 text-lg">{feature.description}</p>
                     </CardContent>
                   </Card>
                 </AnimatedSection>
