@@ -1,0 +1,158 @@
+ GET / 200 in 4577ms
+ ✓ Compiled in 1384ms (504 modules)
+ ⚠ Cross origin request detected from bf26a5e1-e372-427e-bffd-b1d57c73a7a4-00-1kgqefla0fwb0.picard.replit.dev to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ ○ Compiling /api/categories ...
+ ✓ Compiled /api/categories in 2.4s (1087 modules)
+ ⨯ TypeError: fetch failed
+    at async GET (app/api/categories/route.ts:6:19)
+  4 | export async function GET() {
+  5 |   // Your API logic here
+> 6 |   const response = await fetch('http://localhost:3001/api/categories')
+    |                   ^
+  7 |   const data = await response.json()
+  8 |   return NextResponse.json(data)
+  9 | } {
+  [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+      at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3001) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 3001
+  }
+}
+ ⨯ TypeError: fetch failed
+    at async GET (app/api/categories/route.ts:6:19)
+  4 | export async function GET() {
+  5 |   // Your API logic here
+> 6 |   const response = await fetch('http://localhost:3001/api/categories')
+    |                   ^
+  7 |   const data = await response.json()
+  8 |   return NextResponse.json(data)
+  9 | } {
+  [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+      at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3001) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 3001
+  }
+}
+ GET /api/categories 500 in 1825ms
+ ⨯ TypeError: fetch failed
+    at async GET (app/api/categories/route.ts:6:19)
+  4 | export async function GET() {
+  5 |   // Your API logic here
+> 6 |   const response = await fetch('http://localhost:3001/api/categories')
+    |                   ^
+  7 |   const data = await response.json()
+  8 |   return NextResponse.json(data)
+  9 | } {
+  [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+      at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3001) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 3001
+  }
+}
+ ⨯ TypeError: fetch failed
+    at async GET (app/api/categories/route.ts:6:19)
+  4 | export async function GET() {
+  5 |   // Your API logic here
+> 6 |   const response = await fetch('http://localhost:3001/api/categories')
+    |                   ^
+  7 |   const data = await response.json()
+  8 |   return NextResponse.json(data)
+  9 | } {
+  [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+      at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3001) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 3001
+  }
+}
+ GET /api/categories 500 in 2917ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 243ms
+ GET / 200 in 326ms
+ ⨯ TypeError: fetch failed
+    at async GET (app/api/categories/route.ts:6:19)
+  4 | export async function GET() {
+  5 |   // Your API logic here
+> 6 |   const response = await fetch('http://localhost:3001/api/categories')
+    |                   ^
+  7 |   const data = await response.json()
+  8 |   return NextResponse.json(data)
+  9 | } {
+  [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+      at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3001) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 3001
+  }
+}
+ ⨯ TypeError: fetch failed
+    at async GET (app/api/categories/route.ts:6:19)
+  4 | export async function GET() {
+  5 |   // Your API logic here
+> 6 |   const response = await fetch('http://localhost:3001/api/categories')
+    |                   ^
+  7 |   const data = await response.json()
+  8 |   return NextResponse.json(data)
+  9 | } {
+  [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+      at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3001) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 3001
+  }
+}
+ GET /api/categories 500 in 122ms
+ ⨯ TypeError: fetch failed
+    at async GET (app/api/categories/route.ts:6:19)
+  4 | export async function GET() {
+  5 |   // Your API logic here
+> 6 |   const response = await fetch('http://localhost:3001/api/categories')
+    |                   ^
+  7 |   const data = await response.json()
+  8 |   return NextResponse.json(data)
+  9 | } {
+  [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+      at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3001) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 3001
+  }
+}
+ ⨯ TypeError: fetch failed
+    at async GET (app/api/categories/route.ts:6:19)
+  4 | export async function GET() {
+  5 |   // Your API logic here
+> 6 |   const response = await fetch('http://localhost:3001/api/categories')
+    |                   ^
+  7 |   const data = await response.json()
+  8 |   return NextResponse.json(data)
+  9 | } {
+  [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+      at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3001) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 3001
+  }
+}
+ GET /api/categories 500 in 131ms
