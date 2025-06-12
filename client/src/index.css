@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
@@ -6,14 +5,140 @@
 
 :root {
   --worktok-primary: #4caf50;
-  --worktok-primary-light: #66bb6a;
-  --worktok-primary-dark: #388e3c;
-  --worktok-secondary: #2e7d32;
-  --worktok-dark: #1b5e20;
-  --worktok-accent: #81c784;
-  --worktok-light: #c8e6c9;
-  --worktok-gradient-start: #4caf50;
-  --worktok-gradient-end: #66bb6a;
+  --worktok-secondary: #66bb6a;
+  --worktok-dark: #2e7d32;
+  --iraq-green: #4caf50;
+  --iraq-red: #dc2626;
+  --iraq-black: #000000;
+}
+
+/* Custom gradient classes */
+.gradient-primary {
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+}
+
+.gradient-primary-hover {
+  background: linear-gradient(135deg, #43a047 0%, #5cb85c 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #66bb6a 0%, #81c784 100%);
+}
+
+.text-gradient-primary {
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive utilities */
+.container-responsive {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Improved responsive breakpoints */
+@media (max-width: 640px) {
+  .mobile-responsive {
+    padding: 1rem;
+  }
+
+  .mobile-text-lg {
+    font-size: 1.125rem;
+  }
+
+  .mobile-text-xl {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tablet-responsive {
+    padding: 1.5rem;
+  }
+}
+
+/* Custom button styles with primary color */
+.btn-primary {
+  @apply bg-gradient-to-r from-[#4caf50] to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-700 font-medium px-6 py-3 rounded-lg border border-gray-300 hover:border-gray-400 transition-all duration-300;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+}
+
+/* Provider card improvements */
+.provider-card {
+  @apply bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300;
+}
+
+/* Service category card improvements */
+.service-category-card {
+  @apply bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg hover:scale-105 transition-all duration-300;
 }
 
 * {
@@ -99,15 +224,6 @@ body {
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes scaleIn {
   from {
     opacity: 0;
@@ -119,20 +235,12 @@ body {
   }
 }
 
-.animate-slide-up {
-  animation: slideInUp 0.6s ease-out forwards;
-}
-
 .animate-slide-left {
   animation: slideInLeft 0.6s ease-out forwards;
 }
 
 .animate-slide-right {
   animation: slideInRight 0.6s ease-out forwards;
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
 }
 
 .animate-scale-in {
@@ -213,10 +321,6 @@ body {
 }
 
 /* Card hover effects */
-.card-hover {
-  transition: all 0.3s ease;
-}
-
 .card-hover:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -246,11 +350,11 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   .mobile-text-center {
     text-align: center;
   }
-  
+
   .mobile-full-width {
     width: 100%;
   }

@@ -108,7 +108,7 @@ export default function Services() {
                     <SelectValue placeholder="All Categories" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Categories</SelectItem>
+                    <SelectItem value="all">All Categories</SelectItem>
                     {categories.map((category) => (
                       <SelectItem key={category.id} value={category.id.toString()}>
                         {language === 'ar' ? category.nameAr : category.name}
@@ -122,7 +122,7 @@ export default function Services() {
                     <SelectValue placeholder="All Cities" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Cities</SelectItem>
+                    <SelectItem value="all">All Cities</SelectItem>
                     {cities.map((city) => (
                       <SelectItem key={city.id} value={city.id.toString()}>
                         {language === 'ar' ? city.nameAr : city.name}
