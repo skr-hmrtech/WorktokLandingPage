@@ -1,0 +1,255 @@
+{
+  "header": {
+    "logoText": "WorkTok",
+    "logoSubtext": "Iraqi House Services",
+    "navigation": {
+      "home": "Home",
+      "categories": "Categories",
+      "jobs": "Jobs",
+      "providers": "Providers",
+      "about": "About Us",
+      "contact": "Contact Us"
+    },
+    "actions": {
+      "login": "Log In",
+      "signup": "Sign Up"
+    },
+    "language": {
+      "current": "English",
+      "options": [
+        { "code": "en", "label": "English" },
+        { "code": "ar", "label": "العربية" }
+      ]
+    }
+  },
+  "hero": {
+    "title": "Find Top-Rated Iraqi Property & Professional Services with Just One Click",
+    "subtitle": "Say goodbye to unfulfilled promises, hidden fees, and unprofessional services. Experience transparency, reliability, and excellence in every interaction.",
+    "tagline": "With WorkTok, Life Becomes Easier",
+    "cta": "Get Started",
+    "searchPlaceholder": "Plumbing, Electrical, Cleaning...",
+    "cityPlaceholder": "Select city",
+    "serviceLabel": "What service do you need?",
+    "cityLabel": "City",
+    "typingTexts": [
+      "Professional Plumbing Services",
+      "Expert Electrical Work",
+      "Quality Cleaning Services",
+      "Skilled Painting Services",
+      "Professional Carpentry Work"
+    ]
+  },
+  "whoWeAre": {
+    "title": "Who We Are",
+    "subtitle": "Your One-Stop App for Home & Property Repairs, Maintenance, and Professional Services",
+    "description": "WorkTok revolutionizes home and professional service bookings, offering a streamlined solution to connect you with top-rated local providers through two user-friendly apps. Supported by excellent customer service, WorkTok ensures a seamless experience, removing the hassle from finding reliable services.",
+    "additionalText": "Join WorkTok for stress-free access to all your service needs with just a tap, and enjoy high-quality, quick solutions while supporting local talent in Iraq. Welcome to effortless living with WorkTok, where convenience and quality meet."
+  },
+  "stats": {
+    "title": "A leading home repairs and professional services application in Iraq",
+    "metrics": [
+      { "value": "15,000+", "label": "Customer count" },
+      { "value": "2,500+", "label": "Service Providers" },
+      { "value": "50+", "label": "Team members" },
+      { "value": "40+", "label": "Various Job Categories" }
+    ]
+  },
+  "services": {
+    "title": "Most Popular Home, Repair, and Professional Services Nearby",
+    "subtitle": "Explore our most popular services that our customers love, and bid farewell to spend money and time on unreliable services. Step into a world of seamless, high-quality home & property solutions."
+  },
+  "whyChoose": {
+    "title": "Why Choose WORKTOK?",
+    "features": [
+      {
+        "icon": "fas fa-bolt",
+        "title": "Efficiency",
+        "description": "Our platform streamlines the process of finding and hiring service providers, saving you time and effort."
+      },
+      {
+        "icon": "fas fa-shield-alt",
+        "title": "Reliability",
+        "description": "We carefully vet all service providers in our network to ensure they meet our high standards of professionalism."
+      },
+      {
+        "icon": "fas fa-mobile-alt",
+        "title": "Convenience",
+        "description": "Say goodbye to endless phone calls and inquiries. Our user-friendly interface and intuitive features make it easy to describe the service you need."
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "Your Innovative Platform That Connects You With Skilled Professionals In Your Area",
+    "subtitle": "WorkTalk is the comprehensive solution to find the best experts for your Iraqi home needs",
+    "customer": {
+      "title": "How does the customer application work?",
+      "description": "This application is intended for people who need a service. They log in and write down the problems or service they need. If the requested service matches the service provided by a nearby service provider, the provider is notified."
+    },
+    "provider": {
+      "title": "How does the expert (craftsman) application work?",
+      "description": "This program is intended for people or companies wishing to provide services. They register, choose their location, and list the services they offer. They also give a little description about themselves and upload photos of their work. This helps customers understand what they do and the quality of their work."
+    }
+  },
+  "mission": {
+    "title": "Top Home Services and Repairs Platform In Iraq",
+    "subtitle": "We ultimately aim to simplify your life by providing exceptional services, giving you the opportunity to receive multiple quotes to compare, read reviews, and contact professionals directly, thereby making the process of hiring service providers transparent, efficient, and seamless.",
+    "sections": [
+      {
+        "title": "Mission",
+        "subtitle": "Redefine Home & Professional Services",
+        "content": "Our mission is to redefine the home & property services, repairs, and maintenance industry in Iraq by providing unparalleled convenience, reliability, and trust. We strive to enhance the lives of our customers by offering top-quality services and creating a positive impact on the local economy through job creation and empowerment."
+      },
+      {
+        "title": "Vision",
+        "subtitle": "Setting the Industry Standard for Excellence",
+        "content": "Our vision is to become an incomparable platform for all home repairs & professional services in Iraq, setting the industry standard for excellence, innovation, and customer satisfaction. We aim to build long-lasting relationships with our customers and service providers, fostering a trusted community that thrives on quality, efficiency, and mutual success."
+      },
+      {
+        "title": "Message",
+        "subtitle": "Life Becomes Easier.",
+        "content": "Life Becomes Easier. That's our promise to you. We're dedicated to simplifying life for Iraqis, whether to get jobs done perfectly or to find jobs."
+      }
+    ]
+  },
+  "appDownload": {
+    "title": "Download Our Apps",
+    "subtitle": "Get WorkTok on your mobile device for seamless service booking",
+    "customerApp": {
+      "title": "For Customers",
+      "description": "Find and book trusted service providers near you with just a few taps"
+    },
+    "providerApp": {
+      "title": "For Service Providers",
+      "description": "Join our network and grow your business by connecting with customers"
+    },
+    "downloadText": "Available on both platforms"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about our platform",
+    "moreButton": "Show More",
+    "lessButton": "Show Less",
+    "questions": [
+      {
+        "question": "How do I find service providers in my area?",
+        "answer": "Simply enter your location and the type of service you need in our search bar. Our platform will show you verified providers near you with ratings and reviews."
+      },
+      {
+        "question": "Are all service providers verified?",
+        "answer": "Yes, all service providers go through a verification process including background checks, license verification, and quality assessments before joining our platform."
+      },
+      {
+        "question": "How do I pay for services?",
+        "answer": "You can pay through our secure platform using credit cards, debit cards, or cash on delivery. All payments are processed securely through our system."
+      },
+      {
+        "question": "What if I'm not satisfied with the service?",
+        "answer": "We have a customer satisfaction guarantee. If you're not happy with the service, contact our support team within 24 hours and we'll work to resolve the issue."
+      },
+      {
+        "question": "How do I become a service provider?",
+        "answer": "Download our provider app, complete the registration process, submit required documents for verification, and once approved, you can start accepting bookings."
+      },
+      {
+        "question": "What areas do you cover in Iraq?",
+        "answer": "We currently operate in major Iraqi cities including Baghdad, Basra, Erbil, Mosul, and Najaf, with plans to expand to more cities soon."
+      },
+      {
+        "question": "How do I cancel or reschedule a booking?",
+        "answer": "You can cancel or reschedule bookings through the app up to 2 hours before the scheduled time. Some providers may have different cancellation policies."
+      },
+      {
+        "question": "Is there a minimum service charge?",
+        "answer": "Service charges vary by provider and service type. Each provider sets their own rates, which are displayed upfront before you book."
+      },
+      {
+        "question": "How do I contact customer support?",
+        "answer": "You can reach our customer support through the app's help section, email us at support@worktok.org, or call our helpline at (+964) 7519-904-575."
+      },
+      {
+        "question": "Do you offer emergency services?",
+        "answer": "Yes, we have emergency service providers available 24/7 for urgent repairs like plumbing leaks, electrical issues, and lock-outs."
+      }
+    ]
+  },
+  "inquiry": {
+    "title": "Have a Question?",
+    "subtitle": "Get in touch with us for any inquiries or support",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "mobile": "Mobile Number",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Inquiry",
+      "namePlaceholder": "Enter your full name",
+      "emailPlaceholder": "Enter your email address",
+      "mobilePlaceholder": "Enter your mobile number",
+      "subjectPlaceholder": "Enter subject",
+      "messagePlaceholder": "Enter your message here..."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to your account",
+      "email": "Email Address",
+      "password": "Password",
+      "submit": "Sign In",
+      "forgotPassword": "Forgot Password?",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign Up"
+    },
+    "register": {
+      "title": "Create Account",
+      "subtitle": "Join WorkTok today",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "phone": "Phone Number",
+      "submit": "Create Account",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign In"
+    },
+    "forgotPassword": {
+      "title": "Reset Password",
+      "subtitle": "Enter your email to receive reset instructions",
+      "email": "Email Address",
+      "submit": "Send Reset Link",
+      "backToLogin": "Back to Sign In"
+    },
+    "resetPassword": {
+      "title": "New Password",
+      "subtitle": "Enter your new password",
+      "password": "New Password",
+      "confirmPassword": "Confirm New Password",
+      "submit": "Reset Password"
+    },
+    "otpVerify": {
+      "title": "Verify Account",
+      "subtitle": "Enter the verification code sent to your email",
+      "code": "Verification Code",
+      "submit": "Verify",
+      "resend": "Resend Code"
+    }
+  },
+  "footer": {
+    "description": "Iraq's leading platform for connecting homeowners with trusted service professionals. Quality service, guaranteed trust.",
+    "services": {
+      "title": "Services",
+      "items": ["Air Condition", "Plumbing", "Cleaning", "Painter", "Carpenter"]
+    },
+    "company": {
+      "title": "Company",
+      "items": ["الأسئلة الشائعه", "سياسة الخصوصية", "Privacy Policy", "تواصل معنا"]
+    },
+    "contact": {
+      "title": "Contact Us",
+      "email": "Admin@Worktok.Org",
+      "phone": "(+964) 7519-904-575"
+    },
+    "copyright": "© 2025 WorkTok. All Rights Reserved"
+  }
+}
