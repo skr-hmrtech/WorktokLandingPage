@@ -12,7 +12,9 @@ import {
   MessageCircle, 
   ChevronDown,
   ChevronUp,
-  ExternalLink
+  ExternalLink,
+  Users,
+  Award
 } from "lucide-react";
 import { useState } from "react";
 
