@@ -31,19 +31,19 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link href="/" className="text-sm font-medium hover:text-[#4caf50] transition-colors">
-              {content.nav.home}
+              {content.header.navigation.home}
             </Link>
             <Link href="/services" className="text-sm font-medium hover:text-[#4caf50] transition-colors">
-              {content.nav.services}
+              {content.header.navigation.categories}
             </Link>
             <Link href="/providers" className="text-sm font-medium hover:text-[#4caf50] transition-colors">
-              {content.nav.providers}
+              {content.header.navigation.providers}
             </Link>
             <Link href="/about" className="text-sm font-medium hover:text-[#4caf50] transition-colors">
-              {content.nav.about}
+              {content.header.navigation.about}
             </Link>
             <Link href="/contact" className="text-sm font-medium hover:text-[#4caf50] transition-colors">
-              {content.nav.contact}
+              {content.header.navigation.contact}
             </Link>
           </nav>
 
@@ -68,35 +68,35 @@ export default function Header() {
                     className="text-lg font-medium hover:text-[#4caf50] transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    {content.nav.home}
+                    {content.header.navigation.home}
                   </Link>
                   <Link
                     href="/services"
                     className="text-lg font-medium hover:text-[#4caf50] transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    {content.nav.services}
+                    {content.header.navigation.categories}
                   </Link>
                   <Link
                     href="/providers"
                     className="text-lg font-medium hover:text-[#4caf50] transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    {content.nav.providers}
+                    {content.header.navigation.providers}
                   </Link>
                   <Link
                     href="/about"
                     className="text-lg font-medium hover:text-[#4caf50] transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    {content.nav.about}
+                    {content.header.navigation.about}
                   </Link>
                   <Link
                     href="/contact"
                     className="text-lg font-medium hover:text-[#4caf50] transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    {content.nav.contact}
+                    {content.header.navigation.contact}
                   </Link>
                 </nav>
               </SheetContent>

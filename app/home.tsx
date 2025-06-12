@@ -91,7 +91,7 @@ export default function HomePage() {
                       onChange={(e) => setSelectedLocation(e.target.value)}
                       className="w-full pl-10 h-12 text-lg border border-gray-200 rounded-lg focus:border-[#4caf50] focus:outline-none bg-white"
                     >
-                      <option value="">{content.hero.locationPlaceholder}</option>
+                      <option value="">{content.hero.cityPlaceholder}</option>
                       {locations.map(location => (
                         <option key={location} value={location}>{location}</option>
                       ))}
@@ -101,7 +101,7 @@ export default function HomePage() {
                     size="lg" 
                     className="h-12 text-lg bg-[#4caf50] hover:bg-green-600 transition-colors duration-300"
                   >
-                    {content.hero.searchButton}
+                    {content.hero.cta}
                     <ChevronRight className="ml-2 h-5 w-5" />
                   </Button>
                 </div>
@@ -116,22 +116,12 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="grid md:grid-cols-4 gap-8 text-center">
-              <div className="p-6">
-                <div className="text-4xl font-bold text-[#4caf50] mb-2">1000+</div>
-                <div className="text-gray-600">{content.stats.providers}</div>
-              </div>
-              <div className="p-6">
-                <div className="text-4xl font-bold text-[#4caf50] mb-2">50+</div>
-                <div className="text-gray-600">{content.stats.services}</div>
-              </div>
-              <div className="p-6">
-                <div className="text-4xl font-bold text-[#4caf50] mb-2">10K+</div>
-                <div className="text-gray-600">{content.stats.customers}</div>
-              </div>
-              <div className="p-6">
-                <div className="text-4xl font-bold text-[#4caf50] mb-2">98%</div>
-                <div className="text-gray-600">{content.stats.satisfaction}</div>
-              </div>
+              {content.stats.metrics.map((metric: any, index: number) => (
+                <div key={index} className="p-6">
+                  <div className="text-4xl font-bold text-[#4caf50] mb-2">{metric.value}</div>
+                  <div className="text-gray-600">{metric.label}</div>
+                </div>
+              ))}
             </div>
           </AnimatedSection>
         </div>
@@ -178,10 +168,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              {content.cta.title}
+              {content.appDownload.title}
             </h2>
             <p className="text-xl mb-8 text-green-100">
-              {content.cta.subtitle}
+              {content.appDownload.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -190,7 +180,7 @@ export default function HomePage() {
                 className="text-[#4caf50] hover:bg-white/90"
                 onClick={() => setShowAuthModal(true)}
               >
-                {content.cta.getStarted}
+                {content.hero.cta}
               </Button>
               <Button 
                 size="lg" 
@@ -198,7 +188,7 @@ export default function HomePage() {
                 className="border-white text-white hover:bg-white hover:text-[#4caf50]"
               >
                 <Download className="mr-2 h-5 w-5" />
-                {content.cta.downloadApp}
+                {content.appDownload.downloadText}
               </Button>
             </div>
           </AnimatedSection>
