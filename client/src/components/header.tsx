@@ -30,7 +30,7 @@ export default function Header() {
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             <Link 
               href="/" 
               className={`font-medium transition-colors ${
@@ -55,9 +55,30 @@ export default function Header() {
             >
               Providers
             </Link>
-            <a href="#about" className="text-gray-700 hover:text-worktok-primary font-medium">
-              About
-            </a>
+            <Link 
+              href="/about" 
+              className={`font-medium transition-colors ${
+                location === "/about" ? "text-worktok-primary" : "text-gray-700 hover:text-worktok-primary"
+              }`}
+            >
+              About Us
+            </Link>
+            <Link 
+              href="/contact" 
+              className={`font-medium transition-colors ${
+                location === "/contact" ? "text-worktok-primary" : "text-gray-700 hover:text-worktok-primary"
+              }`}
+            >
+              Contact Us
+            </Link>
+            <Link 
+              href="/privacy" 
+              className={`font-medium transition-colors ${
+                location === "/privacy" ? "text-worktok-primary" : "text-gray-700 hover:text-worktok-primary"
+              }`}
+            >
+              Privacy Policy
+            </Link>
           </nav>
 
           {/* Desktop Actions */}
