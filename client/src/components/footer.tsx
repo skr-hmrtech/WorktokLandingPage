@@ -1,3 +1,4 @@
+
 import { Home } from "lucide-react";
 
 export default function Footer() {
@@ -5,54 +6,73 @@ export default function Footer() {
     <footer className="bg-worktok-dark text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-worktok-primary rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg">W</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold">WorkTok</span>
-                <span className="text-sm text-gray-400 -mt-1">Iraqi House Services</span>
-              </div>
-            </div>
-            <p className="text-gray-400 mb-6 max-w-md">
-              Iraq's leading platform for connecting homeowners with trusted service professionals. Quality service, guaranteed trust.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <i className="fab fa-facebook-f text-xl"></i>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <i className="fab fa-instagram text-xl"></i>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <i className="fab fa-twitter text-xl"></i>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <i className="fab fa-tiktok text-xl"></i>
-              </a>
-            </div>
-          </div>
-          
+          {/* Platform Section */}
           <div>
-            <h3 className="font-bold mb-4">Services</h3>
+            <h3 className="font-bold text-lg mb-4">Platform</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Air Condition</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Plumbing</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Cleaning</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Painter</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Carpenter</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">How it Works</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Browse Services</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Service Areas</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Mobile App</a></li>
             </ul>
           </div>
-          
+
+          {/* Customer Section */}
           <div>
-            <h3 className="font-bold mb-4">Company</h3>
+            <h3 className="font-bold text-lg mb-4">Customer</h3>
             <ul className="space-y-2 text-gray-400">
+              <li><a href="#" className="hover:text-white transition-colors">Book a Service</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
               <li><a href="#" className="hover:text-white transition-colors">الأسئلة الشائعه</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">سياسة الخصوصية</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">تواصل معنا</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Customer Support</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Safety Guidelines</a></li>
             </ul>
+          </div>
+
+          {/* Provider Section */}
+          <div>
+            <h3 className="font-bold text-lg mb-4">Provider</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li><a href="#" className="hover:text-white transition-colors">Join as Provider</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Provider Dashboard</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Resources</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Training</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Provider Support</a></li>
+            </ul>
+          </div>
+
+          {/* Social Links Section */}
+          <div>
+            <h3 className="font-bold text-lg mb-4">Social Links</h3>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-10 h-10 bg-worktok-primary rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">W</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-xl font-bold">WorkTok</span>
+                  <span className="text-sm text-gray-400 -mt-1">Iraqi House Services</span>
+                </div>
+              </div>
+              <p className="text-gray-400 mb-6 text-sm">
+                Iraq's leading platform for connecting homeowners with trusted service professionals.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <i className="fab fa-facebook-f text-xl"></i>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <i className="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <i className="fab fa-twitter text-xl"></i>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <i className="fab fa-tiktok text-xl"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         
@@ -71,6 +91,11 @@ export default function Footer() {
             </div>
             <div className="text-center md:text-right text-gray-400">
               <p>&copy; 2025 WorkTok. All Rights Reserved</p>
+              <div className="mt-2 space-x-4 text-sm">
+                <a href="#" className="hover:text-white transition-colors">سياسة الخصوصية</a>
+                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" className="hover:text-white transition-colors">تواصل معنا</a>
+              </div>
             </div>
           </div>
         </div>
