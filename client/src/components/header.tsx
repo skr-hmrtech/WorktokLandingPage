@@ -1,7 +1,8 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Home, Users, Briefcase, Info, Menu, X, Phone, Folder, MapPin } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Home, Users, Briefcase, Info, Menu, X, Phone, Folder, MapPin, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/hooks/useLanguage";
 import AuthModal from "./auth-modal";

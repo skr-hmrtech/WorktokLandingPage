@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Shield, Clock, Award, Star, MapPin, Phone, Mail, CheckCircle, Search, Users, MessageCircle, ChevronDown } from "lucide-react";
+import { ArrowRight, Shield, Clock, Award, Star, MapPin, Phone, Mail, MessageCircle, ChevronDown, ChevronUp, HelpCircle, Download } from "lucide-react";
 import { Link } from "wouter";
 import ServiceCategoryCard from "@/components/service-category-card";
 import ProviderCard from "@/components/provider-card";
@@ -15,11 +15,21 @@ import TypingText from "@/components/typing-text";
 import ScrollToTop from "@/components/scroll-to-top";
 import { useLanguage } from "@/hooks/useLanguage";
 import type { ServiceCategory, ServiceProvider, City } from "@shared/schema";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [inquiryForm, setInquiryForm] = useState({
+    name: '',
+    email: '',
+    mobile: '',
+    subject: '',
+    message: ''
+  });
+  const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
+  const [showAllFAQs, setShowAllFAQs] = useState(false);
 
   const { content, language } = useLanguage();
 
@@ -108,25 +118,18 @@ export default function Home() {
                   </h1>
                   </AnimatedSection>
                   <AnimatedSection animationType="slideLeft" delay={400}>
-                    <div className="text-xl md:text-2xl mb-8 text-green-100 font-medium max-w-2xl">
-                      <TypingText 
-                        texts={language === 'ar' ? [
-                          'وداعاً للوعود غير المحققة والرسوم الخفية',
-                          'شفافية وموثوقية في كل تفاعل',
-                          'خدمات احترافية بأعلى معايير الجودة',
-                          'تجربة فريدة تتجاوز توقعاتك'
-                        ] : [
-                          'Say goodbye to unfulfilled promises, hidden fees, and unprofessional services',
-                          'Experience transparency, reliability, and excellence in every interaction',
-                          'Professional services with the highest quality standards',
-                          'A unique experience that exceeds your expectations'
-                        ]}
-                        speed={60}
-                        deleteSpeed={30}
-                        delay={2000}
-                        className="text-green-100"
-                      />
-                    </div>
+                    <div className="mb-8 max-w-4xl mx-auto">
+                <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-2xl md:text-4xl font-bold">
+                  <span className="text-[#4caf50] hover:scale-110 transition-transform">TRANSPARENCY</span>
+                  <span className="text-gray-700 hover:scale-110 transition-transform">•</span>
+                  <span className="text-blue-600 hover:scale-110 transition-transform">RELIABILITY</span>
+                  <span className="text-gray-700 hover:scale-110 transition-transform">•</span>
+                  <span className="text-purple-600 hover:scale-110 transition-transform">EXCELLENCE</span>
+                </div>
+                <p className="text-lg text-gray-600 mt-4 text-center">
+                  Say goodbye to unfulfilled promises, hidden fees, and unprofessional services
+                </p>
+              </div>
                   </AnimatedSection>
                   <AnimatedSection animationType="slideLeft" delay={600}>
                     <div className="flex flex-wrap gap-4 mb-8">
@@ -553,6 +556,63 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
+      {/* Download Our Apps Section */}
+      <AnimatedSection animationType="slideUp" delay={200}>
+        <section className="py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6">
+                <Download className="w-8 h-8 text-white" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                {content.appDownload.title}
+              </h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                {content.appDownload.subtitle}
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <Card className="bg-gray-800/50 border-gray-600 backdrop-blur-sm text-center p-8">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white">{content.appDownload.customerApp.title}</h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{content.appDownload.customerApp.description}</p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg flex items-center justify-center">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-8" />
+                    </Button>
+                    <Button className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg flex items-center justify-center">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-8" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gray-800/50 border-gray-600 backdrop-blur-sm text-center p-8">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Award className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white">{content.appDownload.providerApp.title}</h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{content.appDownload.providerApp.description}</p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg flex items-center justify-center">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-8" />
+                    </Button>
+                    <Button className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg flex items-center justify-center">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-8" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
       {/* FAQ Section */}
       <AnimatedSection animationType="slideUp">
         <section className="py-20 bg-white">
@@ -565,30 +625,33 @@ export default function Home() {
             </div>
 
             <div className="space-y-4">
-              {content.faq.questions.slice(0, 5).map((faq, index) => (
-                <Card key={index} className="shadow-lg border-0 hover:shadow-xl transition-shadow">
+              {(showAllFAQs ? content.faq.questions : content.faq.questions.slice(0, 5)).map((faq, index) => (
+                <Card key={index} className="shadow-lg borderer-0 hover:shadow-xl transition-shadow">
                   <CardContent className="p-0">
                     <button
+                      onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
                       className="w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors"
                     >
-                      <span className="font-semibold text-lg text-gray-800">{faq.question}</span>
-                      <ChevronDown className="w-5 h-5 text-[#4caf50]" />
+                      <span className="font-semibold text-gray-800">{faq.question}</span>
+                      <ChevronDown className={`w-5 h-5 text-[#4caf50] transition-transform ${expandedFAQ === index ? 'rotate-180' : ''}`} />
                     </button>
-                    <div className="px-6 pb-6 text-gray-600 leading-relaxed">
-                      {faq.answer}
-                    </div>
+                    {expandedFAQ === index && (
+                      <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}
             </div>
 
             <div className="text-center mt-12">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-[#4caf50] text-[#4caf50] hover:bg-[#4caf50] hover:text-white px-8 py-4 rounded-full transition-all duration-300 hover:scale-105"
+              <Button 
+                onClick={() => setShowAllFAQs(!showAllFAQs)}
+                variant="outline" 
+                className="border-[#4caf50] text-[#4caf50] hover:bg-[#4caf50] hover:text-white px-8 py-3 rounded-full"
               >
-                View All FAQs
+                {showAllFAQs ? content.faq.lessButton : content.faq.moreButton}
               </Button>
             </div>
           </div>

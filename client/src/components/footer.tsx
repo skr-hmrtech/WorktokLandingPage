@@ -42,63 +42,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-      {/* Download Apps Section */}
-      <AnimatedSection animationType="slideUp" delay={200}>
-        <section className="py-16 border-b border-gray-700">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6">
-                <Download className="w-8 h-8 text-white" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                {content.appDownload.title}
-              </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                {content.appDownload.subtitle}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <Card className="bg-gray-800/50 border-gray-600 backdrop-blur-sm text-center p-8">
-                <CardContent className="pt-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Users className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-white">{content.appDownload.customerApp.title}</h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">{content.appDownload.customerApp.description}</p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg flex items-center justify-center">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-8" />
-                    </Button>
-                    <Button className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg flex items-center justify-center">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-8" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gray-800/50 border-gray-600 backdrop-blur-sm text-center p-8">
-                <CardContent className="pt-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Award className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-white">{content.appDownload.providerApp.title}</h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">{content.appDownload.providerApp.description}</p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg flex items-center justify-center">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-8" />
-                    </Button>
-                    <Button className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg flex items-center justify-center">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-8" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
-
       {/* Main Footer */}
       <div className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
