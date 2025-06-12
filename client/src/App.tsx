@@ -11,6 +11,9 @@ import Home from "@/pages/home";
 import Services from "@/pages/services";
 import Providers from "@/pages/providers";
 import ProviderDetail from "@/pages/provider-detail";
+import About from "@/pages/about";
+import Contact from "@/pages/contact";
+import Privacy from "@/pages/privacy";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -20,6 +23,9 @@ function Router() {
       <Route path="/services" component={Services} />
       <Route path="/providers" component={Providers} />
       <Route path="/providers/:id" component={ProviderDetail} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/privacy" component={Privacy} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>

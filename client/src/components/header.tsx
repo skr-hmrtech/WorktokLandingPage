@@ -104,7 +104,7 @@ export default function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Button
               variant="ghost"
               size="sm"
@@ -117,7 +117,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4">
+          <div className="lg:hidden border-t border-gray-200 py-4">
             <div className="flex flex-col space-y-4">
               <Link 
                 href="/" 
@@ -145,6 +145,33 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Providers
+              </Link>
+              <Link 
+                href="/about" 
+                className={`font-medium transition-colors ${
+                  location === "/about" ? "text-worktok-primary" : "text-gray-700"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About Us
+              </Link>
+              <Link 
+                href="/contact" 
+                className={`font-medium transition-colors ${
+                  location === "/contact" ? "text-worktok-primary" : "text-gray-700"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact Us
+              </Link>
+              <Link 
+                href="/privacy" 
+                className={`font-medium transition-colors ${
+                  location === "/privacy" ? "text-worktok-primary" : "text-gray-700"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Privacy Policy
               </Link>
               <div className="pt-4 border-t border-gray-200">
                 <div className="flex flex-col space-y-2">

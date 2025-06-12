@@ -11,6 +11,7 @@ import ServiceCategoryCard from "@/components/service-category-card";
 import ProviderCard from "@/components/provider-card";
 import AnimatedSection from "@/components/animated-section";
 import ScrollToTop from "@/components/scroll-to-top";
+import TypingText from "@/components/typing-text";
 import { useLanguage } from "@/hooks/useLanguage";
 import type { ServiceCategory, ServiceProvider, City } from "@shared/schema";
 
@@ -103,7 +104,7 @@ export default function Home() {
                   <AnimatedSection animationType="slideLeft" delay={200}>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                       {content.hero.title}
-                      <span className="block text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
+                      <span className="block text-transparent bg-gradient-to-r from-green-400 to-green-600 bg-clip-text typing-animation">
                         At Your Doorstep
                       </span>
                     </h1>
@@ -175,7 +176,7 @@ export default function Home() {
                         </Select>
                       </div>
                       <Button 
-                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+                        className="w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white font-semibold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
                         onClick={handleSearch}
                       >
                         <Search className="w-5 h-5 mr-2" />
