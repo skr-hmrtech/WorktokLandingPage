@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Search, Star, Users, CheckCircle, MapPin, ArrowRight, Shield, Clock, Award } from "lucide-react";
+import { ArrowRight, Shield, Clock, Award, Star, MapPin, Phone, Mail, CheckCircle } from "lucide-react";
+import { Link } from "wouter";
 import ServiceCategoryCard from "@/components/service-category-card";
 import ProviderCard from "@/components/provider-card";
 import AnimatedSection from "@/components/animated-section";
-import ScrollToTop from "@/components/scroll-to-top";
 import TypingText from "@/components/typing-text";
 import { useLanguage } from "@/hooks/useLanguage";
 import type { ServiceCategory, ServiceProvider, City } from "@shared/schema";
@@ -62,14 +61,14 @@ export default function Home() {
     const searchParams = new URLSearchParams();
     if (searchQuery) searchParams.set("search", searchQuery);
     if (selectedCity) searchParams.set("city", selectedCity);
-    
+
     window.location.href = `/services${searchParams.toString() ? `?${searchParams.toString()}` : ""}`;
   };
 
   return (
     <div className="min-h-screen bg-white">
       <ScrollToTop />
-      
+
       {/* Hero Section */}
       <AnimatedSection animationType="fadeIn">
         <section className="relative min-h-[70vh] flex items-center overflow-hidden">
@@ -102,12 +101,12 @@ export default function Home() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="text-white">
                   <AnimatedSection animationType="slideLeft" delay={200}>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                      {content.hero.title}
-                      <span className="block text-transparent bg-gradient-to-r from-green-400 to-green-600 bg-clip-text typing-animation">
-                        At Your Doorstep
-                      </span>
-                    </h1>
+                    <h1 className="responsive-text-5xl font-bold text-white mb-6 leading-tight mobile-text-center">
+                    {content.hero.title}
+                  </h1>
+                  <p className="responsive-text-xl text-green-100 mb-8 leading-relaxed max-w-4xl mobile-text-center">
+                    {content.hero.subtitle}
+                  </p>
                   </AnimatedSection>
                   <AnimatedSection animationType="slideLeft" delay={400}>
                     <p className="text-xl md:text-2xl mb-8 text-gray-200 font-medium max-w-2xl">

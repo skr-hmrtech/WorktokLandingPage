@@ -62,14 +62,14 @@ export default function Services() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mobile-padding">
         
         {/* Header */}
         <AnimatedSection animationType="slideUp">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              {showCategories ? "Browse Services" : "Service Providers"}
+            <h1 className="responsive-text-4xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-worktok-primary to-worktok-primary-light bg-clip-text text-transparent mobile-text-center">
+              {showCategories ? content.services.title : "Service Providers"}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {showCategories 
@@ -83,7 +83,7 @@ export default function Services() {
         {/* Search and Filters */}
         <AnimatedSection animationType="slideUp" delay={200}>
           <Card className="mb-8 border-0 shadow-xl bg-white/90 backdrop-blur-lg">
-            <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg">
+            <CardHeader className="bg-gradient-to-r from-worktok-primary to-worktok-primary-light text-white rounded-t-lg">
               <CardTitle className="flex items-center gap-3 text-xl">
                 <div className="p-2 bg-white/20 rounded-lg">
                   <Filter className="w-5 h-5" />
@@ -133,7 +133,7 @@ export default function Services() {
 
                 <Button 
                   onClick={handleSearch}
-                  className="py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="py-3 btn-gradient shadow-lg hover:shadow-xl transition-all duration-300 mobile-full-width"
                 >
                   <Search className="w-4 h-4 mr-2" />
                   Search
