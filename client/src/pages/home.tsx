@@ -112,24 +112,40 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="text-white">
+                  {/* First: Large Static Heading */}
                   <AnimatedSection animationType="slideLeft" delay={200}>
-                    <h1 className="responsive-text-5xl font-bold text-white mb-6 leading-tight mobile-text-center">
-                    {content.hero.title}
-                  </h1>
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight text-center lg:text-left">
+                      Find Top-Rated Iraqi Property & Professional Services with Just One Click
+                    </h1>
                   </AnimatedSection>
+
+                  {/* Second: X-Large Typing Text */}
                   <AnimatedSection animationType="slideLeft" delay={400}>
-                    <div className="mb-8 max-w-4xl mx-auto">
-                <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-2xl md:text-4xl font-bold">
-                  <span className="text-[#4caf50] hover:scale-110 transition-transform">TRANSPARENCY</span>
-                  <span className="text-gray-700 hover:scale-110 transition-transform">•</span>
-                  <span className="text-blue-600 hover:scale-110 transition-transform">RELIABILITY</span>
-                  <span className="text-gray-700 hover:scale-110 transition-transform">•</span>
-                  <span className="text-purple-600 hover:scale-110 transition-transform">EXCELLENCE</span>
-                </div>
-                <p className="text-lg text-gray-600 mt-4 text-center">
-                  Say goodbye to unfulfilled promises, hidden fees, and unprofessional services
-                </p>
-              </div>
+                    <div className="mb-8 text-center lg:text-left">
+                      <div className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4">
+                        <TypingText 
+                          texts={[
+                            'TRANSPARENCY',
+                            'RELIABILITY', 
+                            'EXCELLENCE',
+                            'QUALITY ASSURED',
+                            'TRUSTED PROFESSIONALS'
+                          ]}
+                          speed={120}
+                          deleteSpeed={60}
+                          delay={2000}
+                          className="bg-gradient-to-r from-[#4caf50] via-blue-400 to-purple-400 bg-clip-text text-transparent"
+                        />
+                      </div>
+                    </div>
+                  </AnimatedSection>
+
+                  {/* Third: Medium Paragraph for Platform */}
+                  <AnimatedSection animationType="slideLeft" delay={600}>
+                    <p className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-4xl text-center lg:text-left">
+                      Our platform connects you with verified Iraqi professionals for all your property and service needs. 
+                      Experience seamless booking, guaranteed quality, and exceptional customer service - all in one convenient place.
+                    </p>
                   </AnimatedSection>
                   <AnimatedSection animationType="slideLeft" delay={600}>
                     <div className="flex flex-wrap gap-4 mb-8">
