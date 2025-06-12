@@ -1,3 +1,5 @@
+"use client"
+
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import contentEn from '@/data/content-en.json';
 import contentAr from '@/data/content-ar.json';
