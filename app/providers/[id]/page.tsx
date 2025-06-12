@@ -1,6 +1,6 @@
 
-import ProviderDetail from '@/pages/provider-detail'
+import ProviderDetail from '@/pages/providers/[id]'
 
-export default function ProviderDetailPage({ params }: { params: { id: string } }) {
+export default function ProviderDetailPage() {
   return <ProviderDetail />
 }

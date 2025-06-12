@@ -1,11 +1,8 @@
 
-import dynamic from 'next/dynamic';
+"use client"
 
-// Dynamically import the home page content to avoid SSR issues
-const HomePage = dynamic(() => import('./home'), {
-  ssr: false,
-});
+import HomePage from './home'
 
 export default function Page() {
-  return <HomePage />;
+  return <HomePage />
 }
