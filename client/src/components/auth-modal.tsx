@@ -51,7 +51,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           </div>
         </div>
 
-        <Button className="w-full bg-worktok-primary hover:bg-green-600 text-white">
+        <Button className="w-full bg-worktok-primary hover:bg-green-600 text-white py-3 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
           {content.auth.login.submit}
         </Button>
       </form>
@@ -153,7 +153,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           </div>
         </div>
 
-        <Button className="w-full bg-worktok-primary hover:bg-green-600 text-white">
+        <Button className="w-full bg-worktok-primary hover:bg-green-600 text-white py-3 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
           {content.auth.register.submit}
         </Button>
       </form>
@@ -197,7 +197,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           <Input type="email" className="w-full" />
         </div>
 
-        <Button className="w-full bg-worktok-primary hover:bg-green-600 text-white">
+        <Button className="w-full bg-worktok-primary hover:bg-green-600 text-white py-3 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
           {content.auth.forgotPassword.submit}
         </Button>
       </form>
@@ -219,7 +219,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           <Input className="w-full text-center text-lg tracking-widest" maxLength={6} />
         </div>
 
-        <Button className="w-full bg-worktok-primary hover:bg-green-600 text-white">
+        <Button className="w-full bg-worktok-primary hover:bg-green-600 text-white py-3 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
           {content.auth.otpVerify.submit}
         </Button>
       </form>
@@ -281,7 +281,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           </div>
         </div>
 
-        <Button className="w-full bg-worktok-primary hover:bg-green-600 text-white">
+        <Button className="w-full bg-worktok-primary hover:bg-green-600 text-white py-3 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
           {content.auth.resetPassword.submit}
         </Button>
       </form>
@@ -307,8 +307,10 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
-        {renderCurrentForm()}
+      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto p-0">
+        <div className="p-6">
+          {renderCurrentForm()}
+        </div>
       </DialogContent>
     </Dialog>
   );

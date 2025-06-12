@@ -1,4 +1,3 @@
-
 import { useLanguage } from "@/hooks/useLanguage";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -41,218 +40,59 @@ export default function Footer() {
 
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-      {/* Have a Question Section */}
-      <AnimatedSection animationType="slideUp">
-        <section className="py-16 border-b border-gray-700">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#4caf50] to-green-600 rounded-full mb-6">
-                <MessageCircle className="w-8 h-8 text-white" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-[#4caf50] to-green-400 bg-clip-text text-transparent">
-                {content.inquiry.title}
-              </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                {content.inquiry.subtitle}
-              </p>
-            </div>
-
-            <Card className="bg-gray-800/50 border-gray-600 backdrop-blur-sm max-w-4xl mx-auto">
-              <CardContent className="p-8">
-                <form onSubmit={handleInquirySubmit} className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-200 mb-2">
-                      {content.inquiry.form.name}
-                    </label>
-                    <Input
-                      placeholder={content.inquiry.form.namePlaceholder}
-                      value={inquiryForm.name}
-                      onChange={(e) => setInquiryForm({...inquiryForm, name: e.target.value})}
-                      className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-200 mb-2">
-                      {content.inquiry.form.email}
-                    </label>
-                    <Input
-                      type="email"
-                      placeholder={content.inquiry.form.emailPlaceholder}
-                      value={inquiryForm.email}
-                      onChange={(e) => setInquiryForm({...inquiryForm, email: e.target.value})}
-                      className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-200 mb-2">
-                      {content.inquiry.form.mobile}
-                    </label>
-                    <Input
-                      placeholder={content.inquiry.form.mobilePlaceholder}
-                      value={inquiryForm.mobile}
-                      onChange={(e) => setInquiryForm({...inquiryForm, mobile: e.target.value})}
-                      className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-200 mb-2">
-                      {content.inquiry.form.subject}
-                    </label>
-                    <Input
-                      placeholder={content.inquiry.form.subjectPlaceholder}
-                      value={inquiryForm.subject}
-                      onChange={(e) => setInquiryForm({...inquiryForm, subject: e.target.value})}
-                      className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
-                      required
-                    />
-                  </div>
-
-                  <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-200 mb-2">
-                      {content.inquiry.form.message}
-                    </label>
-                    <Textarea
-                      placeholder={content.inquiry.form.messagePlaceholder}
-                      value={inquiryForm.message}
-                      onChange={(e) => setInquiryForm({...inquiryForm, message: e.target.value})}
-                      className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400 min-h-[120px]"
-                      required
-                    />
-                  </div>
-
-                  <div className="md:col-span-2 text-center">
-                    <Button 
-                      type="submit"
-                      size="lg"
-                      className="bg-gradient-to-r from-[#4caf50] to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                    >
-                      <Mail className="w-5 h-5 mr-2" />
-                      {content.inquiry.form.submit}
-                    </Button>
-                  </div>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-      </AnimatedSection>
-
-      {/* Download Our Apps Section */}
+      {/* Download Apps Section */}
       <AnimatedSection animationType="slideUp" delay={200}>
         <section className="py-16 border-b border-gray-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#4caf50] to-green-600 rounded-full mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6">
                 <Download className="w-8 h-8 text-white" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-[#4caf50] to-green-400 bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 {content.appDownload.title}
               </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
                 {content.appDownload.subtitle}
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <Card className="bg-gradient-to-br from-gray-800 to-gray-700 border-gray-600 hover:scale-105 transition-all duration-300">
-                <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-[#4caf50] to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <span className="text-2xl font-bold text-white">C</span>
+              <Card className="bg-gray-800/50 border-gray-600 backdrop-blur-sm text-center p-8">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Users className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">{content.appDownload.customerApp.title}</h3>
-                  <p className="text-gray-300 mb-6">{content.appDownload.customerApp.description}</p>
-                  
-                  <div className="space-y-3">
-                    <Button className="w-full bg-black hover:bg-gray-800 text-white border border-gray-600">
-                      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNzggNS4yMkM3LjQgNS42IDcuMjUgNi4xIDcuMjUgNi42OVYxNy4zMUM3LjI1IDE3LjkgNy40IDE4LjQgNy43OCAxOC43OEM4LjE2IDE5LjE2IDguNjYgMTkuMzEgOS4yNSAxOS4zMUgxNC43NUMxNS4zNCAxOS4zMSAxNS44NCAxOS4xNiAxNi4yMiAxOC43OEMxNi42IDE4LjQgMTYuNzUgMTcuOSAxNi43NSAxNy4zMVY2LjY5QzE2Ljc1IDYuMSAxNi42IDUuNiAxNi4yMiA1LjIyQzE1Ljg0IDQuODQgMTUuMzQgNC42OSAxNC43NSA0LjY5SDkuMjVDOC42NiA0LjY5IDguMTYgNC44NCA3Ljc4IDUuMjJaTTkuMjUgMy4xOUgxNC43NUMxNS43NSAzLjE5IDE2LjY5IDMuNTkgMTcuMzQgNC4yNEMxNy45OSA0Ljg5IDE4LjM5IDUuODMgMTguMzkgNi44M1YxNy4xN0MxOC4zOSAxOC4xNyAxNy45OSAxOS4xMSAxNy4zNCAxOS43NkMxNi42OSAyMC40MSAxNS43NSAyMC44MSAxNC43NSAyMC44MUg5LjI1QzguMjUgMjAuODEgNy4zMSAyMC40MSA2LjY2IDE5Ljc2QzYuMDEgMTkuMTEgNS42MSAxOC4xNyA1LjYxIDE3LjE3VjYuODNDNS42MSA1LjgzIDYuMDEgNC44OSA2LjY2IDQuMjRDNy4zMSAzLjU5IDguMjUgMy4xOSA5LjI1IDMuMTlaTTEyIDUuODFDMTEuNTkgNS44MSAxMS4yNSA2LjE1IDExLjI1IDYuNTZDMTEuMjUgNi45NyAxMS41OSA3LjMxIDEyIDcuMzFDMTIuNDEgNy4zMSAxMi43NSA2Ljk3IDEyLjc1IDYuNTZDMTIuNzUgNi4xNSAxMi40MSA1LjgxIDEyIDUuODFaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="App Store" className="w-6 h-6 mr-3" />
-                      Download on App Store
+                  <h3 className="text-2xl font-bold mb-4 text-white">{content.appDownload.customerApp.title}</h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{content.appDownload.customerApp.description}</p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg flex items-center justify-center">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-8" />
                     </Button>
-                    <Button className="w-full bg-black hover:bg-gray-800 text-white border border-gray-600">
-                      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMuNjA5IDEuODE0TDEzLjc5MiAxMS45OTlMMy42MDkgMjIuMTg0Qy0wLjM3MiAyMC44NzIgLTAuMzcyIDMuMTI4IDMuNjA5IDEuODE0WiIgZmlsbD0iIzMzQzNGMyIvPgo8cGF0aCBkPSJNMjAuNDU2IDguMzQ2TDE2LjY2NyA2LjIyNUwxMy43OTIgMTJMMTYuNjY3IDE3Ljc3NUwyMC40NTYgMTUuNjU0QzIxLjY2MiAxNC45NTEgMjEuNjYyIDkuMDQ5IDIwLjQ1NiA4LjM0NloiIGZpbGw9IiNGRkM4MDciLz4KPHN2Zz4K" alt="Google Play" className="w-6 h-6 mr-3" />
-                      Get it on Google Play
+                    <Button className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg flex items-center justify-center">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-8" />
                     </Button>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-gray-800 to-gray-700 border-gray-600 hover:scale-105 transition-all duration-300">
-                <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-[#4caf50] to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <span className="text-2xl font-bold text-white">P</span>
+              <Card className="bg-gray-800/50 border-gray-600 backdrop-blur-sm text-center p-8">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Award className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">{content.appDownload.providerApp.title}</h3>
-                  <p className="text-gray-300 mb-6">{content.appDownload.providerApp.description}</p>
-                  
-                  <div className="space-y-3">
-                    <Button className="w-full bg-black hover:bg-gray-800 text-white border border-gray-600">
-                      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNzggNS4yMkM3LjQgNS42IDcuMjUgNi4xIDcuMjUgNi42OVYxNy4zMUM3LjI1IDE3LjkgNy40IDE4LjQgNy43OCAxOC43OEM4LjE2IDE5LjE2IDguNjYgMTkuMzEgOS4yNSAxOS4zMUgxNC43NUMxNS4zNCAxOS4zMSAxNS44NCAxOS4xNiAxNi4yMiAxOC43OEMxNi42IDE4LjQgMTYuNzUgMTcuOSAxNi43NSAxNy4zMVY2LjY5QzE2Ljc1IDYuMSAxNi42IDUuNiAxNi4yMiA1LjIyQzE1Ljg0IDQuODQgMTUuMzQgNC42OSAxNC43NSA0LjY5SDkuMjVDOC42NiA0LjY5IDguMTYgNC44NCA3Ljc4IDUuMjJaTTkuMjUgMy4xOUgxNC43NUMxNS43NSAzLjE5IDE2LjY5IDMuNTkgMTcuMzQgNC4yNEMxNy45OSA0Ljg5IDE4LjM5IDUuODMgMTguMzkgNi44M1YxNy4xN0MxOC4zOSAxOC4xNyAxNy45OSAxOS4xMSAxNy4zNCAxOS43NkMxNi42OSAyMC40MSAxNS43NSAyMC44MSAxNC43NSAyMC44MUg5LjI1QzguMjUgMjAuODEgNy4zMSAyMC40MSA2LjY2IDE5Ljc2QzYuMDEgMTkuMTEgNS42MSAxOC4xNyA1LjYxIDE3LjE3VjYuODNDNS42MSA1LjgzIDYuMDEgNC44OSA2LjY2IDQuMjRDNy4zMSAzLjU5IDguMjUgMy4xOSA5LjI1IDMuMTlaTTEyIDUuODFDMTEuNTkgNS44MSAxMS4yNSA2LjE1IDExLjI1IDYuNTZDMTEuMjUgNi45NyAxMS41OSA3LjMxIDEyIDcuMzFDMTIuNDEgNy4zMSAxMi43NSA2Ljk3IDEyLjc1IDYuNTZDMTIuNzUgNi4xNSAxMi40MSA1LjgxIDEyIDUuODFaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="App Store" className="w-6 h-6 mr-3" />
-                      Download on App Store
+                  <h3 className="text-2xl font-bold mb-4 text-white">{content.appDownload.providerApp.title}</h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{content.appDownload.providerApp.description}</p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg flex items-center justify-center">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-8" />
                     </Button>
-                    <Button className="w-full bg-black hover:bg-gray-800 text-white border border-gray-600">
-                      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMuNjA5IDEuODE0TDEzLjc5MiAxMS45OTlMMy42MDkgMjIuMTg0Qy0wLjM3MiAyMC44NzIgLTAuMzcyIDMuMTI4IDMuNjA5IDEuODE0WiIgZmlsbD0iIzMzQzNGMyIvPgo8cGF0aCBkPSJNMjAuNDU2IDguMzQ2TDE2LjY2NyA2LjIyNUwxMy43OTIgMTJMMTYuNjY3IDE3Ljc3NUwyMC40NTYgMTUuNjU0QzIxLjY2MiAxNC45NTEgMjEuNjYyIDkuMDQ5IDIwLjQ1NiA4LjM0NloiIGZpbGw9IiNGRkM4MDciLz4KPHN2Zz4K" alt="Google Play" className="w-6 h-6 mr-3" />
-                      Get it on Google Play
+                    <Button className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg flex items-center justify-center">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-8" />
                     </Button>
                   </div>
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </section>
-      </AnimatedSection>
-
-      {/* FAQ Section */}
-      <AnimatedSection animationType="slideUp" delay={400}>
-        <section className="py-16 border-b border-gray-700">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-[#4caf50] to-green-400 bg-clip-text text-transparent">
-                {content.faq.title}
-              </h2>
-              <p className="text-xl text-gray-300">{content.faq.subtitle}</p>
-            </div>
-
-            <div className="space-y-4">
-              {displayedFAQs.map((faq, index) => (
-                <Card key={index} className="bg-gray-800/50 border-gray-600 backdrop-blur-sm">
-                  <CardContent className="p-0">
-                    <button
-                      onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
-                      className="w-full text-left p-6 flex justify-between items-center hover:bg-gray-700/30 transition-colors"
-                    >
-                      <span className="font-semibold text-lg">{faq.question}</span>
-                      {expandedFAQ === index ? (
-                        <ChevronUp className="w-5 h-5 text-[#4caf50]" />
-                      ) : (
-                        <ChevronDown className="w-5 h-5 text-gray-400" />
-                      )}
-                    </button>
-                    {expandedFAQ === index && (
-                      <div className="px-6 pb-6 text-gray-300 leading-relaxed">
-                        {faq.answer}
-                      </div>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {content.faq.questions.length > 5 && (
-              <div className="text-center mt-8">
-                <Button
-                  variant="outline"
-                  onClick={() => setShowAllFAQs(!showAllFAQs)}
-                  className="border-[#4caf50] text-[#4caf50] hover:bg-[#4caf50] hover:text-white"
-                >
-                  {showAllFAQs ? content.faq.lessButton : content.faq.moreButton}
-                </Button>
-              </div>
-            )}
           </div>
         </section>
       </AnimatedSection>
@@ -333,7 +173,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          
+
           {/* Contact Us - Moved Up */}
           <div className="border-t border-gray-700 mt-8 pt-8">
             <div className="grid md:grid-cols-3 gap-6 mb-8">

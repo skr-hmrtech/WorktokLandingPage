@@ -354,10 +354,43 @@ body {
   .mobile-text-center {
     text-align: center;
   }
+}
 
-  .mobile-full-width {
-    width: 100%;
-  }
+/* Fix dropdown z-index issues */
+.dropdown-content {
+  z-index: 9999 !important;
+}
+
+[data-radix-select-content] {
+  z-index: 9999 !important;
+}
+
+[data-radix-dropdown-content] {
+  z-index: 9999 !important;
+}
+
+/* Ensure modals are above everything */
+[data-radix-dialog-overlay] {
+  z-index: 10000 !important;
+}
+
+[data-radix-dialog-content] {
+  z-index: 10001 !important;
+}
+
+/* Fix select trigger appearance */
+[data-radix-select-trigger] {
+  min-width: 120px;
+}
+
+/* Improve form inputs */
+.form-input {
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
 }
 
 /* RTL Support */

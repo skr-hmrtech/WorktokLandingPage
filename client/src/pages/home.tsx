@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Shield, Clock, Award, Star, MapPin, Phone, Mail, CheckCircle, Search, Users } from "lucide-react";
+import { ArrowRight, Shield, Clock, Award, Star, MapPin, Phone, Mail, CheckCircle, Search, Users, MessageCircle, ChevronDown } from "lucide-react";
 import { Link } from "wouter";
 import ServiceCategoryCard from "@/components/service-category-card";
 import ProviderCard from "@/components/provider-card";
@@ -105,14 +106,27 @@ export default function Home() {
                     <h1 className="responsive-text-5xl font-bold text-white mb-6 leading-tight mobile-text-center">
                     {content.hero.title}
                   </h1>
-                  <p className="responsive-text-xl text-green-100 mb-8 leading-relaxed max-w-4xl mobile-text-center">
-                    {content.hero.subtitle}
-                  </p>
                   </AnimatedSection>
                   <AnimatedSection animationType="slideLeft" delay={400}>
-                    <p className="text-xl md:text-2xl mb-8 text-gray-200 font-medium max-w-2xl">
-                      {content.hero.subtitle}
-                    </p>
+                    <div className="text-xl md:text-2xl mb-8 text-green-100 font-medium max-w-2xl">
+                      <TypingText 
+                        texts={language === 'ar' ? [
+                          'وداعاً للوعود غير المحققة والرسوم الخفية',
+                          'شفافية وموثوقية في كل تفاعل',
+                          'خدمات احترافية بأعلى معايير الجودة',
+                          'تجربة فريدة تتجاوز توقعاتك'
+                        ] : [
+                          'Say goodbye to unfulfilled promises, hidden fees, and unprofessional services',
+                          'Experience transparency, reliability, and excellence in every interaction',
+                          'Professional services with the highest quality standards',
+                          'A unique experience that exceeds your expectations'
+                        ]}
+                        speed={60}
+                        deleteSpeed={30}
+                        delay={2000}
+                        className="text-green-100"
+                      />
+                    </div>
                   </AnimatedSection>
                   <AnimatedSection animationType="slideLeft" delay={600}>
                     <div className="flex flex-wrap gap-4 mb-8">
@@ -447,6 +461,135 @@ export default function Home() {
                   </Card>
                 </AnimatedSection>
               ))}
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Have a Question Section */}
+      <AnimatedSection animationType="slideUp">
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#4caf50] to-green-600 rounded-full mb-6">
+                <MessageCircle className="w-8 h-8 text-white" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+                {content.inquiry.title}
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                {content.inquiry.subtitle}
+              </p>
+            </div>
+
+            <Card className="max-w-4xl mx-auto shadow-2xl border-0">
+              <CardContent className="p-8">
+                <form className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        {content.inquiry.form.name}
+                      </label>
+                      <Input
+                        placeholder={content.inquiry.form.namePlaceholder}
+                        className="w-full border-2 focus:border-[#4caf50] transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        {content.inquiry.form.email}
+                      </label>
+                      <Input
+                        type="email"
+                        placeholder={content.inquiry.form.emailPlaceholder}
+                        className="w-full border-2 focus:border-[#4caf50] transition-colors"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        {content.inquiry.form.mobile}
+                      </label>
+                      <Input
+                        type="tel"
+                        placeholder={content.inquiry.form.mobilePlaceholder}
+                        className="w-full border-2 focus:border-[#4caf50] transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        {content.inquiry.form.subject}
+                      </label>
+                      <Input
+                        placeholder={content.inquiry.form.subjectPlaceholder}
+                        className="w-full border-2 focus:border-[#4caf50] transition-colors"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      {content.inquiry.form.message}
+                    </label>
+                    <Textarea
+                      placeholder={content.inquiry.form.messagePlaceholder}
+                      rows={6}
+                      className="w-full border-2 focus:border-[#4caf50] transition-colors resize-none"
+                    />
+                  </div>
+                  <div className="text-center">
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="bg-gradient-to-r from-[#4caf50] to-green-600 hover:from-green-600 hover:to-green-700 text-white px-12 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                    >
+                      {content.inquiry.form.submit}
+                    </Button>
+                  </div>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* FAQ Section */}
+      <AnimatedSection animationType="slideUp">
+        <section className="py-20 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+                {content.faq.title}
+              </h2>
+              <p className="text-xl text-gray-600">{content.faq.subtitle}</p>
+            </div>
+
+            <div className="space-y-4">
+              {content.faq.questions.slice(0, 5).map((faq, index) => (
+                <Card key={index} className="shadow-lg border-0 hover:shadow-xl transition-shadow">
+                  <CardContent className="p-0">
+                    <button
+                      className="w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors"
+                    >
+                      <span className="font-semibold text-lg text-gray-800">{faq.question}</span>
+                      <ChevronDown className="w-5 h-5 text-[#4caf50]" />
+                    </button>
+                    <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-[#4caf50] text-[#4caf50] hover:bg-[#4caf50] hover:text-white px-8 py-4 rounded-full transition-all duration-300 hover:scale-105"
+              >
+                View All FAQs
+              </Button>
             </div>
           </div>
         </section>
